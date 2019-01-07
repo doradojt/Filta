@@ -363,3 +363,16 @@ var myMap = L.map("map", {
 L.control.layers(baseMaps, overlayMaps,{
   collapsed: false}).addTo(myMap);
 L.control.scale({position: "bottomleft"}).addTo(myMap);
+var plugin = L.control.measure({
+  position: 'topleft', 
+  keyboard: true, 
+  activeKeyCode: 'M'.charCodeAt(0),
+  cancelKeyCode: 27,
+  lineColor: 'red', 
+  lineWeight: 2, 
+  lineDashArray: '6,6', 
+  lineOpacity: 1,
+    formatDistance: function(val) {
+      return Math.round(1000* val / 1609.344) / 1000 + 'mile';
+    }
+}).addTo(myMap);
