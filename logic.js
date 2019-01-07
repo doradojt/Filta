@@ -263,6 +263,33 @@ var essexColleges = [
   },
 ];
 
+var airports = [
+  {
+  location: [40.6895, -74.1745],
+  name: "Newark Liberty International Airport",
+  address: "3 Brewster Road",
+  city: "Newark, NJ 07114"
+  },
+  {
+  location: [40.875278, -74.1653],
+  name: "Essex County Airport",
+  address: "Building M, 27 Wright Way",
+  city: "Fairfield, NJ 07004"
+  },
+  {
+  location: [40.9475, -74.31444],
+  name: "Lincoln Park Airport",
+  address: "425 Beaverbrook Road",
+  city: "Lincoln, NJ 07035"
+  },
+  {
+  location:[40.85, -74.060833],
+  name: "Teterboro Airport",
+  address: "111 Industrial Avenue",
+  city: "Teterboro, NJ 07608"
+  },
+]
+
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
 var hospitalIcon = L.icon({
   iconUrl: 'marker-icon-red.png',
@@ -285,11 +312,19 @@ var essexCollegeIcon = L.icon({
   popupAnchor:  [-3, -35]
 });
 
+var airportIcon = L.icon({
+  iconUrl: 'marker-icon-orange.png',
+  iconSize:     [25, 45], // size of the icon
+  iconAnchor:   [25, 45], // point of the icon which will correspond to marker's location
+  popupAnchor:  [-3, -35]
+});
+
 
 var currentCustomerMarkers = [];
 var essexHospitalProspects = [];
 var bergenHospitalProspects = [];
 var essexCollegeProspects = [];
+var airportProspects = [];
 
 for (var i = 0; i < essex.length; i++) {
   currentCustomerMarkers.push(
@@ -318,11 +353,18 @@ for (var i = 0; i < essexColleges.length; i++) {
       .bindPopup("<h1>" + essexColleges[i].name + "</h1> <hr> <h2>" + essexColleges[i].address + " " + essexColleges[i].city + "</h2> <h3>" + "Students:" + essexColleges[i].students + "</h3>")
     );
 }
+for (var i = 0; i < airports.length; i++) {
+  airportProspects.push(
+    L.marker(airports[i].location, {icon: airportIcon})
+      .bindPopup("<h1>" + airports[i].name + "</h1> <hr> <h2>" + airports[i].address + "</h2> <h2>" + airports[i].city + "</h2>")
+    );
+}
 
 var custLayer = L.layerGroup(currentCustomerMarkers);
 var essexHospitalProspectLayer = L.layerGroup(essexHospitalProspects);
 var bergenHospitalProspectLayer = L.layerGroup(bergenHospitalProspects);
 var essexCollegeProspectLayer = L.layerGroup(essexCollegeProspects);
+var airportProspectLayer = L.layerGroup(airportProspects);
 
 var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
@@ -349,7 +391,8 @@ var overlayMaps = {
   Customers: custLayer,
   "Essex Hospital Prospects": essexHospitalProspectLayer,
   "Bergen Hospital Prospects": bergenHospitalProspectLayer,
-  "Essex College Prospects": essexCollegeProspectLayer
+  "Essex College Prospects": essexCollegeProspectLayer,
+  "Prospective Airports": airportProspectLayer
 };
 
 var myMap = L.map("map", {
