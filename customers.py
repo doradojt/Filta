@@ -1,3 +1,5 @@
+/reformat this as a specific featers/geometry geojson file, then save as json, should work
+
 var customers = 
     {
     "essex":{
