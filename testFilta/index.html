@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Geo JSON FILTA</title>
+
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.52.0/mapbox-gl.css' rel='stylesheet' />
+<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>  
+
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <div class='sidebar'>
+        <div class='heading'>
+          <h1>Our Customers</h1>
+        </div>
+        <div id='listings' class='listings'></div>
+      </div>
+    <!-- The div where we will inject our map -->
+    <div class='sidebar pad2'>Listing</div>
+    <div id='map' class='map pad2'>Map</div>
+  
+    <!-- Our JS -->
+    <script type="text/javascript" src="logicnew.js"></script>
+  </body>
+  </html>
+  

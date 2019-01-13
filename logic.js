@@ -395,6 +395,9 @@ var overlayMaps = {
   "Prospective Airports": airportProspectLayer
 };
 
+// var mapLayer = MQ.mapLayer(),
+  // myMap;
+
 var myMap = L.map("map", {
   center: [40.85, -74.071],
   zoom: 11,
@@ -405,6 +408,15 @@ var myMap = L.map("map", {
 // Add the layer control to the map
 L.control.layers(baseMaps, overlayMaps,{
   collapsed: false}).addTo(myMap);
+// L.control.layers({
+//     'Map': mapLayer,
+//     'Satellite': MQ.satelliteLayer(),
+//     'Dark': MQ.darkLayer(),
+//     'Light': MQ.lightLayer()
+//   }, {
+//     'Traffic Flow': MQ.trafficLayer({layers: ['flow']}),
+//     'Traffic Incidents': MQ.trafficLayer({layers: ['incidents']})
+//   }).addTo(myMap);
 L.control.scale({position: "bottomleft"}).addTo(myMap);
 var plugin = L.control.measure({
   position: 'topleft', 
