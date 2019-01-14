@@ -403,16 +403,19 @@ var myMap = L.map("map", {
   zoom: 11,
   layers: [light, custLayer]
 });
+//https://github.com/johan/world.geo.json/tree/master/countries/USA/NJ  data HERE!
+// var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=CE%2FGN3yaHQBebqnBcX41vlXn1tM%3D&Expires=1547481835&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
-var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=CE%2FGN3yaHQBebqnBcX41vlXn1tM%3D&Expires=1547481835&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
-
+var url = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Passaic.geo.json"
+var urltwo = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Essex.geo.json"
+var urlthree = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Bergen.geo.json"
 var geojson;
 
-d3.json(URL, function(data) {
+d3.json(url, function(data) {
   
   geojson = L.choropleth(data, {
 
-    valueProperty: "geoid",
+    valueProperty: "type",
 
     scale: ["#ffffb2", "#b10026"],
 
@@ -422,15 +425,60 @@ d3.json(URL, function(data) {
     style: {
       color: "#fff",
       weight: 1,
-      fillOpacity: 0.8
+      fillOpacity: 0.5
     },
 
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("County Name:" + feature.properties.namelsad);
+    layer.bindPopup("County Name:" + feature.properties.name);
+  }
+}).addTo(myMap);
+});
+
+d3.json(urltwo, function(data) {
+  
+  geojson = L.choropleth(data, {
+
+    valueProperty: "type",
+
+    scale: ["#cccccc", "#b2b2b2"],
+
+    steps: 10,
+
+    mode: "q",
+    style: {
+      color: "#fff",
+      weight: 1,
+      fillOpacity: 0.5
+    },
+
+  onEachFeature: function(feature, layer) {
+    layer.bindPopup("County Name:" + feature.properties.name);
   }
 }).addTo(myMap);
 });
  
+d3.json(urlthree, function(data) {
+  
+  geojson = L.choropleth(data, {
+
+    valueProperty: "type",
+
+    // scale: ["#cccccc", "#b2b2b2"],
+
+    // steps: 10,
+
+    mode: "q",
+    style: {
+      color: "#feecf7",
+      weight: 1,
+      fillOpacity: 0.5
+    },
+
+  onEachFeature: function(feature, layer) {
+    layer.bindPopup("County Name:" + feature.properties.name);
+  }
+}).addTo(myMap);
+});
 // Pass our map layers into our layer control
 // Add the layer control to the map
 L.control.layers(baseMaps, overlayMaps,{
