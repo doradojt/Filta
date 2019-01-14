@@ -404,18 +404,18 @@ var myMap = L.map("map", {
   layers: [light, custLayer]
 });
 //https://github.com/johan/world.geo.json/tree/master/countries/USA/NJ  data HERE!
-// var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=CE%2FGN3yaHQBebqnBcX41vlXn1tM%3D&Expires=1547481835&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=reKjSQY6e3uOacLURKM%2FKES3ONg%3D&Expires=1547495933&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
-var url = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Passaic.geo.json"
-var urltwo = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Essex.geo.json"
-var urlthree = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Bergen.geo.json"
+// var url = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Passaic.geo.json"
+// var urltwo = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Essex.geo.json"
+// var urlthree = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Bergen.geo.json"
 var geojson;
 
-d3.json(url, function(data) {
+d3.json(URL, function(data) {
   
   geojson = L.choropleth(data, {
 
-    valueProperty: "type",
+    valueProperty: "GEOID10",//attempt  to make the zipcode choropleth
 
     scale: ["#ffffb2", "#b10026"],
 
@@ -429,56 +429,56 @@ d3.json(url, function(data) {
     },
 
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("County Name:" + feature.properties.name);
+    layer.bindPopup("County Name:" + feature.properties.GEOID10);
   }
 }).addTo(myMap);
 });
 
-d3.json(urltwo, function(data) {
+// d3.json(urltwo, function(data) {
   
-  geojson = L.choropleth(data, {
+//   geojson = L.choropleth(data, {
 
-    valueProperty: "type",
+//     valueProperty: "type",
 
-    scale: ["#cccccc", "#b2b2b2"],
+//     scale: ["#cccccc", "#b2b2b2"],
 
-    steps: 10,
+//     steps: 10,
 
-    mode: "q",
-    style: {
-      color: "#fff",
-      weight: 1,
-      fillOpacity: 0.5
-    },
+//     mode: "q",
+//     style: {
+//       color: "#fff",
+//       weight: 1,
+//       fillOpacity: 0.5
+//     },
 
-  onEachFeature: function(feature, layer) {
-    layer.bindPopup("County Name:" + feature.properties.name);
-  }
-}).addTo(myMap);
-});
+//   onEachFeature: function(feature, layer) {
+//     layer.bindPopup("County Name:" + feature.properties.name);
+//   }
+// }).addTo(myMap);
+// });
  
-d3.json(urlthree, function(data) {
+// d3.json(urlthree, function(data) {
   
-  geojson = L.choropleth(data, {
+//   geojson = L.choropleth(data, {
 
-    valueProperty: "type",
+//     valueProperty: "type",
 
-    // scale: ["#cccccc", "#b2b2b2"],
+//     // scale: ["#cccccc", "#b2b2b2"],
 
-    // steps: 10,
+//     // steps: 10,
 
-    mode: "q",
-    style: {
-      color: "#feecf7",
-      weight: 1,
-      fillOpacity: 0.5
-    },
+//     mode: "q",
+//     style: {
+//       color: "#feecf7",
+//       weight: 1,
+//       fillOpacity: 0.5
+//     },
 
-  onEachFeature: function(feature, layer) {
-    layer.bindPopup("County Name:" + feature.properties.name);
-  }
-}).addTo(myMap);
-});
+//   onEachFeature: function(feature, layer) {
+//     layer.bindPopup("County Name:" + feature.properties.name);
+//   }
+// }).addTo(myMap);
+// });
 // Pass our map layers into our layer control
 // Add the layer control to the map
 L.control.layers(baseMaps, overlayMaps,{
