@@ -404,7 +404,7 @@ var myMap = L.map("map", {
   layers: [light, custLayer]
 });
 
-var URL = "http://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=JLfHEaPSBdnddPW8n6ufIDY9GrM%3D&Expires=1547475567&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=CE%2FGN3yaHQBebqnBcX41vlXn1tM%3D&Expires=1547481835&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
 var geojson;
 
@@ -426,7 +426,7 @@ d3.json(URL, function(data) {
     },
 
   onEachFeature: function(feature, layer) {
-    layer.bindPopup(feature.properties.namelsad + ", " + feature.properties.geoid);
+    layer.bindPopup("County Name:" + feature.properties.namelsad);
   }
 }).addTo(myMap);
 });
