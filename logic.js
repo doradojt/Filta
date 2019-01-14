@@ -404,6 +404,33 @@ var myMap = L.map("map", {
   layers: [light, custLayer]
 });
 
+var URL = "http://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=JLfHEaPSBdnddPW8n6ufIDY9GrM%3D&Expires=1547475567&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+
+var geojson;
+
+d3.json(URL, function(data) {
+  
+  geojson = L.choropleth(data, {
+
+    valueProperty: "geoid",
+
+    scale: ["#ffffb2", "#b10026"],
+
+    steps: 10,
+
+    mode: "q",
+    style: {
+      color: "#fff",
+      weight: 1,
+      fillOpacity: 0.8
+    },
+
+  onEachFeature: function(feature, layer) {
+    layer.bindPopup(feature.properties.namelsad + ", " + feature.properties.geoid);
+  }
+}).addTo(myMap);
+});
+ 
 // Pass our map layers into our layer control
 // Add the layer control to the map
 L.control.layers(baseMaps, overlayMaps,{
@@ -431,3 +458,5 @@ var plugin = L.control.measure({
       return Math.round(1000* val / 1609.344) / 1000 + 'mile';
     }
 }).addTo(myMap);
+
+
