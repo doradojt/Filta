@@ -404,7 +404,9 @@ var myMap = L.map("map", {
   layers: [light, custLayer]
 });
 //https://github.com/johan/world.geo.json/tree/master/countries/USA/NJ  data HERE!
-var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=reKjSQY6e3uOacLURKM%2FKES3ONg%3D&Expires=1547495933&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+//https://www.color-hex.com/ good resource for color hex!!!
+var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=wzoQKZAjkcuFBKJxOsPgIoFok0M%3D&Expires=1547737048&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+// var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=yHwF98SS3bQQHoizhHt28Voby4w%3D&Expires=1547737309&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ"
 
 // var url = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Passaic.geo.json"
 // var urltwo = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Essex.geo.json"
@@ -415,9 +417,9 @@ d3.json(URL, function(data) {
   
   geojson = L.choropleth(data, {
 
-    valueProperty: "GEOID10",//attempt  to make the zipcode choropleth
+    valueProperty: "geoid",//attempt  to make the zipcode choropleth
 
-    scale: ["#ffffb2", "#b10026"],
+    scale: ["#ffffb2", "#7fffd4"],
 
     steps: 10,
 
@@ -429,7 +431,7 @@ d3.json(URL, function(data) {
     },
 
   onEachFeature: function(feature, layer) {
-    layer.bindPopup("County Name:" + feature.properties.GEOID10);
+    layer.bindPopup("County Name:" + feature.properties.county);
   }
 }).addTo(myMap);
 });
