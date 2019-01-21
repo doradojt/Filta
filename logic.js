@@ -522,32 +522,43 @@ var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.co
 //          d > 7.0   ? '#FED976' :
 //                     '#FFEDA0';
 //}
+var NJ07 = ["07502", "07631", "07503", "07640", "07504", "07641","07505", "07642", "07506", "07620", "07643", "07508", "07646", "07509", "07647", "07510", "07513", "07648", "07514", "07649", "07524", "07650", "07533", "07657", "07474", "07538", "07660", "07543", "07661", "07544", "07666", "07670", "07675", "07676", "07699", "07621", "07624", "07417", "07015", "07026", "07011", "07031", "07012", "07057", "07013", "07012", "07057", "07013", "07070", "07014", "07055", "07071", "07512", "07073", "07075", "07626", "07410", "07010", "07020", "07022", "07024", "07522", "07072", "07074", "07436", "07608", "07627", "07452", "07604", "07644", "07652", "07653", "07662", "07663", "07423", "07430", "07432", "07466", "07450", "07451", "07507", "07458", "07463", "07481", "07628", "07495", "07645", "07656", "07677", "07632", "07601", "07424", "07602", "07442", "07603", "07605", "07606", "07470", "07607", "07501", "07630"];
+
+var NG10 = ["07040", "07041", "07078", "07111", "07039", "07004", "07006", "07007", "07009", "07017", "07018", "07019", "07021", "07028", "07042", "07043", "07044", "07107", "07050", "07051", "07052", "07068", "07079", "07106", "07195", "07104", "07101", "07108", "07102", "07112", "07103", "07114", "07105", "07175", "07184", "07188", "07189", "07191", "07192", "07193", "07198", "07199", "07003", "07109", "07110"];
 
 var geojson;
 
 d3.json(URL, function(data) {
   
-  geojson = L.choropleth(data, {
+  //for (var i = 0; i < NG07.length; i++) {
+  //check with Anthony about this loop
+    geojson = L.choropleth(data, {
 
-    valueProperty: "GEOID10",//attempt  to make the zipcode choropleth
+      valueProperty: "GEOID10",//attempt  to make the zipcode choropleth
+      
+      // if (i == valueProperty) {
+      //   color: "#ffffb2";
+      // } else {
+      //   color: "#b10026";
+      // }
+      
+      scale: ["#ffffb2", "#b10026"],
 
-    scale: ["#ffffb2", "#b10026"],
+      // Number of breaks in step range
+      steps: 100,
 
-    // Number of breaks in step range
-    steps: 100,
+      mode: "q",
+      style: {
+        //border color
+        color: "#fff",
+        weight: 3,
+        fillOpacity: 0.6
+      },
 
-    mode: "q",
-    style: {
-      //border color
-      color: "#fff",
-      weight: 3,
-      fillOpacity: 0.6
-    },
-
-    onEachFeature: function(feature, layer) {
-      layer.bindPopup("ZipCode:" + feature.properties.GEOID10);
-    }
-  }).addTo(myMap);
+      onEachFeature: function(feature, layer) {
+        layer.bindPopup("ZipCode:" + feature.properties.GEOID10);
+      }
+    }).addTo(myMap);
 });
 
 // Pass our map layers into our layer control
