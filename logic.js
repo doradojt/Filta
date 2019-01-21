@@ -510,6 +510,18 @@ var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.co
 // // var urltwo = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Essex.geo.json"
 // // var urlthree = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Bergen.geo.json"
 
+// USE THIS FOR THE COLOR ZIPCODE, IT IS FROM YOUR LEAFLET HOMEWORK
+//make a list of the zipcodes, then run through the list, assign a color if it is, another if not
+// function getColor(d) {
+//   return d > 1.0 ? '#800026' :
+//          d > 2.0  ? '#BD0026' :
+//          d > 3.0  ? '#E31A1C' :
+//          d > 4.0  ? '#FC4E2A' :
+//          d > 5.0   ? '#FD8D3C' :
+//          d > 6.0   ? '#FEB24C' :
+//          d > 7.0   ? '#FED976' :
+//                     '#FFEDA0';
+//}
 
 var geojson;
 
