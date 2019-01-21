@@ -288,7 +288,89 @@ var airports = [
   address: "111 Industrial Avenue",
   city: "Teterboro, NJ 07608"
   },
-]
+];
+
+var businesses = [
+  {
+  location: [40.919540, -74.076320],
+  name: "Garden State Plaza",
+  address: "1 Garden State Plaza Blvd",
+  city: "Paramus, NJ 07652"
+  },
+  {
+  location: [40.956430, -74.068920],
+  name: "Paramus Park",
+  address: "700 Paramus Park",
+  city: "Paramus, NJ 07652"
+  },
+  {
+  location: [40.904980, -74.030280],
+  name: "Shops at Riverside",
+  address: "1 Riverside Square Mall",
+  city: "Hackensack, NJ 07601"
+  },
+  {
+  location: [41.069490, -74.070560],
+  name: "Wegman's Supermarket",
+  address: "100 Farm View",
+  city: "Montvale, NJ 07645"
+  },
+  {
+  location: [40.914631, -74.059059],
+  name: "WholeFoods",
+  address: "300 Bergen Town Center",
+  city: "Paramus, NJ 07652"
+  },
+  {
+  location: [40.978901, -74.122910],
+  name: "WholeFoods",
+  address: "44 Godwin Avenue",
+  city: "Ridgewood, NJ 07450"
+  },
+  {
+  location: [40.969189, -73.956390],
+  name: "WholeFoods",
+  address: "45 Vervalen St",
+  city: "Closter, NJ 07624"
+  },
+  {
+  location: [40.818729, -74.223007],
+  name: "WholeFoods",
+  address: "701 Bloomfield Ave",
+  city: "Montclair, NJ 07042"
+  },
+  {
+  location: [40.740269, -74.169823],
+  name: "WholeFoods",
+  address: "633 Broad St",
+  city: "Newark, NJ 07102"
+  },
+  {
+  location: [40.805092, -74.248573],
+  name: "WholeFoods",
+  address: "235 Prospect Ave",
+  city: "West Orange, NJ 07052"
+  },
+  {
+  location: [40.753550, -74.405740],
+  name: "WholeFoods",
+  address: "222 Main St",
+  city: "Madison, NJ 07940"
+  },
+  {
+  location: [40.716499, -74.286324],
+  name: "WholeFoods",
+  address: "2245 Springfield Ave",
+  city: "Vauxhall, NJ 07088"
+  },
+  {
+  location: [40.953541, -74.073738],
+  name: "Shake Shack",
+  address: "479 NJ-17",
+  city: "Paramus, NJ 07652"
+  },
+];
+
 
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
 var hospitalIcon = L.icon({
@@ -318,6 +400,12 @@ var airportIcon = L.icon({
   iconAnchor:   [25, 45], // point of the icon which will correspond to marker's location
   popupAnchor:  [-3, -35]
 });
+var businessIcon = L.icon({
+  iconUrl: 'marker-icon-grey.png',
+  iconSize:     [25, 45], // size of the icon
+  iconAnchor:   [25, 45], // point of the icon which will correspond to marker's location
+  popupAnchor:  [-3, -35]
+});
 
 
 var currentCustomerMarkers = [];
@@ -325,6 +413,7 @@ var essexHospitalProspects = [];
 var bergenHospitalProspects = [];
 var essexCollegeProspects = [];
 var airportProspects = [];
+var businessProspects = [];
 
 for (var i = 0; i < essex.length; i++) {
   currentCustomerMarkers.push(
@@ -359,12 +448,20 @@ for (var i = 0; i < airports.length; i++) {
       .bindPopup("<h1>" + airports[i].name + "</h1> <hr> <h2>" + airports[i].address + "</h2> <h2>" + airports[i].city + "</h2>")
     );
 }
+for (var i = 0; i < businesses.length; i++) {
+  businessProspects.push(
+    L.marker(businesses[i].location, {icon: businessIcon})
+      .bindPopup("<h1>" + businesses[i].name + "</h1> <hr> <h2>" + businesses[i].address + "</h2> <h2>" + businesses[i].city + "</h2>")
+    );
+}
 
 var custLayer = L.layerGroup(currentCustomerMarkers);
 var essexHospitalProspectLayer = L.layerGroup(essexHospitalProspects);
 var bergenHospitalProspectLayer = L.layerGroup(bergenHospitalProspects);
 var essexCollegeProspectLayer = L.layerGroup(essexCollegeProspects);
 var airportProspectLayer = L.layerGroup(airportProspects);
+var businessProspectLayer = L.layerGroup(businessProspects)
+
 
 var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
   attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
@@ -392,7 +489,8 @@ var overlayMaps = {
   "Essex Hospital Prospects": essexHospitalProspectLayer,
   "Bergen Hospital Prospects": bergenHospitalProspectLayer,
   "Essex College Prospects": essexCollegeProspectLayer,
-  "Prospective Airports": airportProspectLayer
+  "Prospective Airports": airportProspectLayer,
+  "Prospective Businesses": businessProspectLayer
 };
 
 // var mapLayer = MQ.mapLayer(),
@@ -403,97 +501,48 @@ var myMap = L.map("map", {
   zoom: 11,
   layers: [light, custLayer]
 });
-//https://github.com/johan/world.geo.json/tree/master/countries/USA/NJ  data HERE!
-//https://www.color-hex.com/ good resource for color hex!!!
-var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=wzoQKZAjkcuFBKJxOsPgIoFok0M%3D&Expires=1547737048&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
-// var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=yHwF98SS3bQQHoizhHt28Voby4w%3D&Expires=1547737309&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ"
+// //https://github.com/johan/world.geo.json/tree/master/countries/USA/NJ  data HERE!
+// //https://www.color-hex.com/ good resource for color hex!!!
+var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=vOZjGwhEX%2B3HeegI7mG87rcpwlk%3D&Expires=1548043511&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+// // var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=yHwF98SS3bQQHoizhHt28Voby4w%3D&Expires=1547737309&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ"
 
-// var url = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Passaic.geo.json"
-// var urltwo = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Essex.geo.json"
-// var urlthree = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Bergen.geo.json"
+// // var url = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Passaic.geo.json"
+// // var urltwo = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Essex.geo.json"
+// // var urlthree = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Bergen.geo.json"
+
+
 var geojson;
 
 d3.json(URL, function(data) {
   
   geojson = L.choropleth(data, {
 
-    valueProperty: "geoid",//attempt  to make the zipcode choropleth
+    valueProperty: "GEOID10",//attempt  to make the zipcode choropleth
 
-    scale: ["#ffffb2", "#7fffd4"],
+    scale: ["#ffffb2", "#b10026"],
 
-    steps: 10,
+    // Number of breaks in step range
+    steps: 100,
 
     mode: "q",
     style: {
+      //border color
       color: "#fff",
-      weight: 1,
-      fillOpacity: 0.5
+      weight: 3,
+      fillOpacity: 0.6
     },
 
-  onEachFeature: function(feature, layer) {
-    layer.bindPopup("County Name:" + feature.properties.county);
-  }
-}).addTo(myMap);
+    onEachFeature: function(feature, layer) {
+      layer.bindPopup("ZipCode:" + feature.properties.GEOID10);
+    }
+  }).addTo(myMap);
 });
 
-// d3.json(urltwo, function(data) {
-  
-//   geojson = L.choropleth(data, {
-
-//     valueProperty: "type",
-
-//     scale: ["#cccccc", "#b2b2b2"],
-
-//     steps: 10,
-
-//     mode: "q",
-//     style: {
-//       color: "#fff",
-//       weight: 1,
-//       fillOpacity: 0.5
-//     },
-
-//   onEachFeature: function(feature, layer) {
-//     layer.bindPopup("County Name:" + feature.properties.name);
-//   }
-// }).addTo(myMap);
-// });
- 
-// d3.json(urlthree, function(data) {
-  
-//   geojson = L.choropleth(data, {
-
-//     valueProperty: "type",
-
-//     // scale: ["#cccccc", "#b2b2b2"],
-
-//     // steps: 10,
-
-//     mode: "q",
-//     style: {
-//       color: "#feecf7",
-//       weight: 1,
-//       fillOpacity: 0.5
-//     },
-
-//   onEachFeature: function(feature, layer) {
-//     layer.bindPopup("County Name:" + feature.properties.name);
-//   }
-// }).addTo(myMap);
-// });
 // Pass our map layers into our layer control
 // Add the layer control to the map
 L.control.layers(baseMaps, overlayMaps,{
   collapsed: false}).addTo(myMap);
-// L.control.layers({
-//     'Map': mapLayer,
-//     'Satellite': MQ.satelliteLayer(),
-//     'Dark': MQ.darkLayer(),
-//     'Light': MQ.lightLayer()
-//   }, {
-//     'Traffic Flow': MQ.trafficLayer({layers: ['flow']}),
-//     'Traffic Incidents': MQ.trafficLayer({layers: ['incidents']})
-//   }).addTo(myMap);
+
 L.control.scale({position: "bottomleft"}).addTo(myMap);
 var plugin = L.control.measure({
   position: 'topleft', 
