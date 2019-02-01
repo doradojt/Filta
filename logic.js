@@ -1,7 +1,7 @@
 
 // An array containing each city's name, location, and population
-var essex = [
-  {
+var currentCustomer= [
+{
   location: [40.739157, -74.327442],
   name: "Dun & Bradstreet",
   address: "103 John F. Kennedy Pkwy",
@@ -77,6 +77,24 @@ var essex = [
   name: "Turtle Back Zoo",
   address: "560 Northfield Avenue",
   city: "West Orange, NJ 07052"
+},
+{
+  location: [41.073750, -74.128430],
+  name: "Konica Minolta",
+  address: "100 Williams Drive",
+  city: "Ramsey, NJ 07446"
+},
+{
+  location: [40.942880, -73.945570],
+  name: "Academy of the Holy Angels",
+  address: "315 Hillside Avenue",
+  city: "Demarest, NJ 07627"
+},
+{
+  location: [41.073580, -74.133440],
+  name: "Don Bosco Prep",
+  address: "492 N. Franklin Turnpike",
+  city: "Ramsey, NJ 07446"
 }];
 
 var essexHospitals = [
@@ -415,10 +433,10 @@ var essexCollegeProspects = [];
 var airportProspects = [];
 var businessProspects = [];
 
-for (var i = 0; i < essex.length; i++) {
+for (var i = 0; i < currentCustomer.length; i++) {
   currentCustomerMarkers.push(
-    L.marker(essex[i].location)
-      .bindPopup("<h1>" + essex[i].name + "</h1> <hr> <h2>" + essex[i].address + "</h2> <h2>" + essex[i].city + "</h2>")
+    L.marker(currentCustomer[i].location)
+      .bindPopup("<h1>" + currentCustomer[i].name + "</h1> <hr> <h2>" + currentCustomer[i].address + "</h2> <h2>" + currentCustomer[i].city + "</h2>")
     );
 }
 
@@ -485,7 +503,7 @@ var baseMaps = {
 
 // Overlays that may be toggled on or off
 var overlayMaps = {
-  Customers: custLayer,
+  "Customers": custLayer,
   "Essex Hospital Prospects": essexHospitalProspectLayer,
   "Bergen Hospital Prospects": bergenHospitalProspectLayer,
   "Essex College Prospects": essexCollegeProspectLayer,
@@ -503,8 +521,13 @@ var myMap = L.map("map", {
 });
 // //https://github.com/johan/world.geo.json/tree/master/countries/USA/NJ  data HERE!
 // //https://www.color-hex.com/ good resource for color hex!!!
-var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=vOZjGwhEX%2B3HeegI7mG87rcpwlk%3D&Expires=1548043511&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
-// // var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=yHwF98SS3bQQHoizhHt28Voby4w%3D&Expires=1547737309&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ"
+
+// USE THIS FOR ZIP CODES
+var URL = "http://data.ci.newark.nj.us/dataset/c60e2a32-5f0a-41ce-b48d-304c06fe66b1/resource/e801054d-2392-4413-af40-042e9bc986b9/download/njzctapolygon.geojson";
+
+// var link =
+// "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=zfPUIqPNOMy5HAiXpeiillUb9K0%3D&Expires=1548991276&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+
 
 // // var url = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Passaic.geo.json"
 // // var urltwo = "https://raw.githubusercontent.com/johan/world.geo.json/master/countries/USA/NJ/Essex.geo.json"
@@ -522,9 +545,76 @@ var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.co
 //          d > 7.0   ? '#FED976' :
 //                     '#FFEDA0';
 //}
+
+// function chooseColor(county) {
+//   switch (county) {
+//   case "Bergen":
+//     return "green";
+//   case "Essex":
+//     return "green";
+//   case "Atlantic":
+//     return "red";
+//   case "Burlington":
+//     return "red";
+//   case "Camden":
+//     return 'red';
+//   case "Cumberland":
+//     return 'red';
+//   case "Cape May":
+//     return 'red';
+//   case "Gloucester":
+//     return 'red';
+//   case "Hunterdon":
+//     return 'red';
+//   case "Mercer":
+//     return "red";
+//   case "Hudson":
+//     return "red";
+//   case "Middlesex":
+//     return "cyan";
+//   case "Ocean":
+//     return "red";
+//   case "Monmouth":
+//     return "cyan";
+//   case "Morris":
+//     return "red";
+//   case "Salem":
+//     return "red";
+//   case "Passaic":
+//     return "red";
+//   case "Sussex":
+//     return "red";
+//   case "Union":
+//     return "red";
+//   case "Warren":
+//     return "purple";
+//   case "Somerset":
+//     return "purple";
+//   default:
+//     return "grey";
+//   }
+// }
+
+
 var NJ07 = ["07502", "07631", "07503", "07640", "07504", "07641","07505", "07642", "07506", "07620", "07643", "07508", "07646", "07509", "07647", "07510", "07513", "07648", "07514", "07649", "07524", "07650", "07533", "07657", "07474", "07538", "07660", "07543", "07661", "07544", "07666", "07670", "07675", "07676", "07699", "07621", "07624", "07417", "07015", "07026", "07011", "07031", "07012", "07057", "07013", "07012", "07057", "07013", "07070", "07014", "07055", "07071", "07512", "07073", "07075", "07626", "07410", "07010", "07020", "07022", "07024", "07522", "07072", "07074", "07436", "07608", "07627", "07452", "07604", "07644", "07652", "07653", "07662", "07663", "07423", "07430", "07432", "07466", "07450", "07451", "07507", "07458", "07463", "07481", "07628", "07495", "07645", "07656", "07677", "07632", "07601", "07424", "07602", "07442", "07603", "07605", "07606", "07470", "07607", "07501", "07630"];
 
 var NG10 = ["07040", "07041", "07078", "07111", "07039", "07004", "07006", "07007", "07009", "07017", "07018", "07019", "07021", "07028", "07042", "07043", "07044", "07107", "07050", "07051", "07052", "07068", "07079", "07106", "07195", "07104", "07101", "07108", "07102", "07112", "07103", "07114", "07105", "07175", "07184", "07188", "07189", "07191", "07192", "07193", "07198", "07199", "07003", "07109", "07110"];
+
+// d3.json(link, function(data) {
+//   // Creating a geoJSON layer with the retrieved data
+//   L.geoJson(data, {
+//     // Style each feature (in this case a county)
+//     style: function(feature) {
+//       return {
+//         color: "white",
+//         // Call the chooseColor function to decide which color to color our county (color based on county)
+//         fillColor: chooseColor(feature.properties.county),
+//         fillOpacity: 0.5,
+//         weight: 1.5
+//       };
+//     }
+//   }).addTo(map);
+// });
 
 var geojson;
 
@@ -551,7 +641,7 @@ d3.json(URL, function(data) {
       style: {
         //border color
         color: "#fff",
-        weight: 3,
+        weight: 1.5,
         fillOpacity: 0.6
       },
 
