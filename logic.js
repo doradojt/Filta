@@ -281,6 +281,320 @@ var essexColleges = [
   },
 ];
 
+var slaymakerNJCustomers = [
+  {
+  location: [],
+  name: "Chubb - Building A",
+  address: "202 Halls Mills Road",
+  city: "Whitehouse Station, NJ 08889",
+  phone: "(908)-572-2000"
+  },
+  {
+  location: [],
+  name: "Chubb - Building B",
+  address: "202 Halls Mills Road",
+  city: "Whitehouse Station, NJ 08889",
+  phone: "(908)-572-2000"
+  },
+  {
+  location: [],
+  name: "Verizon HQ Office Northeast",
+  address: "145 Chubb Way",
+  city: "Branchburg, NJ 08876",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Verizon Office",
+  address: "",
+  city: "Piscataway, NJ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Citi Warren",
+  address: "",
+  city: "Warren, NJ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Affinity Credit Union",
+  address: "",
+  city: "Basking Ridge, NJ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Roche Pharma",
+  address: "",
+  city: "Branchburg, NJ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Daiichi Sankyo",
+  address: "",
+  city: "Basking Ridge, NJ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Imclone/Lilly",
+  address: "",
+  city: "Branchburg, NJ 08876",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Rider University  - Cranberry's",
+  address: "",
+  city: "Lawrenceville, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Rider University  - Dally's",
+  address: "",
+  city: "Lawrenceville, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Rider University  - Westminster Choir College",
+  address: "",
+  city: "Princeton, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Princeton Theological Seminary",
+  address: "",
+  city: "Princeton, NJ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Hun School",
+  address: "",
+  city: "Princeton, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Allergan - Madison",
+  address: "",
+  city: "Madison, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Merck/SWS",
+  address: "",
+  city: "Madison, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "TCNJ - Foodcourt",
+  address: "",
+  city: "Ewing, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "TCNJ - TDubs",
+  address: "",
+  city: "Ewing, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Rider University  - Traditions",
+  address: "",
+  city: "Ewing, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "Park Place Cafe",
+  address: "",
+  city: "Parsippany, NJ ",
+  phone: "NA"
+  },
+  {
+  location: [],
+  name: "BMS - Hopewell - Satellite",
+  address: "",
+  city: "Pennington, NJ ",
+  phone: "NA"
+  },
+];
+
+var slaymakerPACustomers =[
+  {
+  location: [40.644900, -75.408690],
+  name: "Lehigh Valley Muhlenberg Hospital",
+  address: "2545 Schoenersville Road",
+  city: "Bethlehem, PA 18017",
+  phone: "NA"
+  },
+  {
+  location: [40.675840, -75.324500],
+  name: "Northhampton Community College - Food Court",
+  address: "3835 Green Pond Road",
+  city: "Bethlehem, PA 18020",
+  phone: "NA"
+  },
+  {
+  location: [40.244561, -75.090591],
+  name: "The Bucks Club",
+  address: "2600 Old York Road",
+  city: "Jamison, PA 18929",
+  phone: "(215)-343-0350"
+  },
+  {
+  location: [40.596150, -75.510680],
+  name: "Muhlenberg University Catering",
+  address: "2400 Chew Street, Seegers Union Building",
+  city: "Allentown, PA 18104",
+  phone: "(484) 664-3488"
+  },
+  {
+  location: [40.559690, -75.486740],
+  name: "The Brass Nail",
+  address: "3015 Lehigh Street",
+  city: "Allentown, PA 18103",
+  phone: "NA"
+  },
+  {
+  location: [40.345820, -75.036250],
+  name: "Giggleberry Fair",
+  address: "5750 Upper York Road",
+  city: "New Hope, PA 18938",
+  phone: "NA"
+  },
+  {
+  location: [40.104740, -74.866570],
+  name: "Lower Bucks Hospital",
+  address: "501 Bath Road",
+  city: "Bristol, PA 19007",
+  phone: "NA"
+  },
+  {
+  location: [40.564770, -75.564050],
+  name: "Whole Foods",
+  address: "750 N Krocks Road, Suite 301",
+  city: "Allentown, PA 18106",
+  phone: "NA"
+  },
+  {
+  location: [40.605730, -75.378230],
+  name: "Lehigh University - Pandinis",
+  address: "29 Trembley Drive",
+  city: "Bethlehem, PA 18015",
+  phone: "(610)-758-4819"
+  },
+  {
+  location: [40.302630, -75.149340],
+  name: "Doylestown Hospital",
+  address: "2554, 595 W. State Street",
+  city: "Doylestown, PA 18901",
+  phone: "(215) 345-2200"
+  },
+  {
+  location: [40.657450, -75.418020],
+  name: "Lehigh University - UC1 - Kitchen/Grill",
+  address: "3350 Schoenersville Road",
+  city: "Bethlehem, PA 18017",
+  phone: "NA"
+  },
+  {
+  location: [40.585740, -75.358900],
+  name: "Lehigh University Stabler Arena",
+  address: "124 Goodman Drive S.",
+  city: "Bethlehem, PA 18015",
+  phone: "NA"
+  },
+  {
+  location: [40.566780, -75.523727],
+  name: "Lehigh Valley Hospital - Cedar Crest",
+  address: "1200 S. Cedar Crest Blvd",
+  city: "Allentown, PA 18103",
+  phone: "NA"
+  },
+  {
+  location: [40.630871, -75.382477],
+  name: "Moravian College",
+  address: "1200 Main Street",
+  city: "Bethlehem, PA 18018",
+  phone: "NA"
+  },
+  {
+  location: [40.605728, -75.378227],
+  name: "Lehigh University (UC3 - Catering/Mtn. Top",
+  address: "29 Trembley Drive",
+  city: "Bethlehem, PA 18015",
+  phone: "NA"
+  },
+  {
+  location: [40.618770, -75.380020],
+  name: "Moravian College - Clewell Dining Hall",
+  address: "39 W. Church Street",
+  city: "Bethlehem, PA 18018",
+  phone: "NA"
+  },
+  {
+  location: [40.244560, -75.090590],
+  name: "The Bucks Club - Pool",
+  address: "2600 Old York Road",
+  city: "Jamison, PA 18929",
+  phone: "(215)-343-0350"
+  },
+  {
+  location: [40.587040, -75.558560],
+  name: "Duck Donuts",
+  address: "4608 Broadway",
+  city: "Allentown, PA 18104",
+  phone: "NA"
+  },
+  {
+  location: [40.610010, -75.371880],
+  name: "Lehigh University - Brodhead",
+  address: "119 E. Morton Street",
+  city: "Bethlehem, PA 18015",
+  phone: "NA"
+  },
+  {
+  location: [40.606570, -75.372930],
+  name: "Lehigh University - Rathbone",
+  address: "63 University Drive",
+  city: "Bethlehem, PA 18015",
+  phone: "NA"
+  },
+  {
+  location: [40.605430, -75.375790],
+  name: "Lehigh University - Hawk's Nest",
+  address: "690 Taylor Street",
+  city: "Bethlehem, PA 18015",
+  phone: "NA"
+  },
+  {
+  location: [40.536720, -75.377068],
+  name: "DeSales University",
+  address: "2755 Station Ave",
+  city: "Center Valley, PA 19034",
+  phone: "NA"
+  },
+  {
+  location: [40.644901, -75.408691],
+  name: "Lehigh Valley Muhlenberg Hospital",
+  address: "2545 Schoenersville Road",
+  city: "Bethlehem, PA 18017",
+  phone: "NA"
+  },
+];
+
 var airports = [
   {
   location: [40.6895, -74.1745],
@@ -432,6 +746,8 @@ var bergenHospitalProspects = [];
 var essexCollegeProspects = [];
 var airportProspects = [];
 var businessProspects = [];
+var slaymakerNJProspects = [];
+var slaymakerPAProspects = [];
 
 for (var i = 0; i < currentCustomer.length; i++) {
   currentCustomerMarkers.push(
@@ -472,13 +788,27 @@ for (var i = 0; i < businesses.length; i++) {
       .bindPopup("<h1>" + businesses[i].name + "</h1> <hr> <h2>" + businesses[i].address + "</h2> <h2>" + businesses[i].city + "</h2>")
     );
 }
+for (var i = 0; i < slaymakerNJCustomers.length; i++) {
+  slaymakerNJProspects.push(
+    L.marker(slaymakerNJCustomers[i].location, {icon: businessIcon})
+      .bindPopup("<h1>" + slaymakerNJCustomers[i].name + "</h1> <hr> <h2>" + slaymakerNJCustomers[i].address + "</h2> <h2>" + slaymakerNJCustomers[i].city + "</h2>")
+    );
+}
+for (var i = 0; i < slaymakerPACustomers.length; i++) {
+  slaymakerPAProspects.push(
+    L.marker(slaymakerPACustomers[i].location, {icon: businessIcon})
+      .bindPopup("<h1>" + slaymakerPACustomers[i].name + "</h1> <hr> <h2>" + slaymakerPACustomers[i].address + "</h2> <h2>" + slaymakerPACustomers[i].city + "</h2>")
+    );
+}
 
 var custLayer = L.layerGroup(currentCustomerMarkers);
 var essexHospitalProspectLayer = L.layerGroup(essexHospitalProspects);
 var bergenHospitalProspectLayer = L.layerGroup(bergenHospitalProspects);
 var essexCollegeProspectLayer = L.layerGroup(essexCollegeProspects);
 var airportProspectLayer = L.layerGroup(airportProspects);
-var businessProspectLayer = L.layerGroup(businessProspects)
+var businessProspectLayer = L.layerGroup(businessProspects);
+var slaymakerProspectLayer = L.layerGroup(slaymakerNJProspects);
+var slaymakerPAProspectLayer = L.layerGroup(slaymakerPAProspects)
 
 
 var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -508,7 +838,9 @@ var overlayMaps = {
   "Bergen Hospital Prospects": bergenHospitalProspectLayer,
   "Essex College Prospects": essexCollegeProspectLayer,
   "Prospective Airports": airportProspectLayer,
-  "Prospective Businesses": businessProspectLayer
+  "Prospective Businesses": businessProspectLayer,
+  "Slaymaker NJ": slaymakerProspectLayer,
+  "Slaymaker PA": slaymakerPAProspectLayer
 };
 
 // var mapLayer = MQ.mapLayer(),
@@ -523,7 +855,7 @@ var myMap = L.map("map", {
 // //https://www.color-hex.com/ good resource for color hex!!!
 
 // USE THIS FOR ZIP CODES
-var URL = "http://data.ci.newark.nj.us/dataset/c60e2a32-5f0a-41ce-b48d-304c06fe66b1/resource/e801054d-2392-4413-af40-042e9bc986b9/download/njzctapolygon.geojson";
+var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=fPGX4Uty%2FyH8OXLQudSzpeFKlKI%3D&Expires=1549147284&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
 // var link =
 // "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=zfPUIqPNOMy5HAiXpeiillUb9K0%3D&Expires=1548991276&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
