@@ -283,150 +283,150 @@ var essexColleges = [
 
 var slaymakerNJCustomers = [
   {
-  location: [],
+  location: [40.645820, -74.764350],
   name: "Chubb - Building A",
   address: "202 Halls Mills Road",
   city: "Whitehouse Station, NJ 08889",
   phone: "(908)-572-2000"
   },
   {
-  location: [],
+  location: [40.645831, -74.764361],
   name: "Chubb - Building B",
   address: "202 Halls Mills Road",
   city: "Whitehouse Station, NJ 08889",
   phone: "(908)-572-2000"
   },
   {
-  location: [],
+  location: [40.555500, -74.705360],
   name: "Verizon HQ Office Northeast",
   address: "145 Chubb Way",
   city: "Branchburg, NJ 08876",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.544650, -74.495760],
   name: "Verizon Office",
-  address: "",
-  city: "Piscataway, NJ",
+  address: "201 Centennial Ave",
+  city: "Piscataway, NJ 08854",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.645710, -74.523430],
   name: "Citi Warren",
-  address: "",
-  city: "Warren, NJ",
+  address: "283 King George Road",
+  city: "Warren, NJ 07059",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.644820, -74.583170],
   name: "Affinity Credit Union",
-  address: "",
-  city: "Basking Ridge, NJ",
+  address: "73 Mountainview Road",
+  city: "Basking Ridge, NJ 07920",
   phone: "NA"
   },
   {
-  location: [],
-  name: "Roche Pharma",
-  address: "",
-  city: "Branchburg, NJ",
-  phone: "NA"
-  },
-  {
-  location: [],
-  name: "Daiichi Sankyo",
-  address: "",
-  city: "Basking Ridge, NJ",
-  phone: "NA"
-  },
-  {
-  location: [],
-  name: "Imclone/Lilly",
-  address: "",
+  location: [40.564320, -74.700570],
+  name: "Roche Molecular Systems",
+  address: "1080 US-202 #500",
   city: "Branchburg, NJ 08876",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.695430, -74.579470],
+  name: "Daiichi Sankyo",
+  address: "211 Mount Airy Road",
+  city: "Basking Ridge, NJ 07920",
+  phone: "NA"
+  },
+  {
+  location: [40.554080, -74.709290],
+  name: "Imclone/Lilly",
+  address: "33 Imclone Drive",
+  city: "Branchburg, NJ 08876",
+  phone: "NA"
+  },
+  {
+  location: [40.279030, -74.732262],
   name: "Rider University  - Cranberry's",
-  address: "",
-  city: "Lawrenceville, NJ ",
+  address: "2083 Lawrenceville Road",
+  city: "Lawrenceville, NJ 08648",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.279031, -74.732263],
   name: "Rider University  - Dally's",
-  address: "",
-  city: "Lawrenceville, NJ ",
+  address: "2083 Lawrenceville Road",
+  city: "Lawrenceville, NJ 08648",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.358000, -74.654680],
   name: "Rider University  - Westminster Choir College",
-  address: "",
-  city: "Princeton, NJ ",
+  address: "101 Walnut Lane",
+  city: "Princeton, NJ 08540",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.344670, -74.663430],
   name: "Princeton Theological Seminary",
-  address: "",
-  city: "Princeton, NJ",
+  address: "64 Mercer Street",
+  city: "Princeton, NJ 08542",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.339660, -74.685310],
   name: "Hun School",
-  address: "",
-  city: "Princeton, NJ ",
+  address: "176 Edgerstoune Road",
+  city: "Princeton, NJ 08540",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.762270, -74.434910],
   name: "Allergan - Madison",
-  address: "",
-  city: "Madison, NJ ",
+  address: "5 Giralda Farms, Dodge Dr.",
+  city: "Madison, NJ 07940",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.758980, -74.436798],
   name: "Merck/SWS",
-  address: "",
-  city: "Madison, NJ ",
+  address: "2 Giralda Farms",
+  city: "Madison, NJ 07940",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.271920, -74.782760],
   name: "TCNJ - Foodcourt",
-  address: "",
-  city: "Ewing, NJ ",
+  address: "2000 Pennington Road",
+  city: "Ewing, NJ 08618",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.271921, -74.782761],
   name: "TCNJ - TDubs",
-  address: "",
-  city: "Ewing, NJ ",
+  address: "2000 Pennington Road",
+  city: "Ewing, NJ 08618",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.279030, -74.732262],
   name: "Rider University  - Traditions",
-  address: "",
-  city: "Ewing, NJ ",
+  address: "2083 Lawrenceville Road",
+  city: "Lawrenceville, NJ 08648",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.867980, -74.443020],
   name: "Park Place Cafe",
-  address: "",
-  city: "Parsippany, NJ ",
+  address: "379 Interpace Parkway #1",
+  city: "Parsippany, NJ 07054",
   phone: "NA"
   },
   {
-  location: [],
+  location: [40.342490, -74.773030],
   name: "BMS - Hopewell - Satellite",
-  address: "",
-  city: "Pennington, NJ ",
+  address: "311 Pennington Rocky Hill Road",
+  city: "Pennington, NJ 08534",
   phone: "NA"
   },
 ];
@@ -848,7 +848,7 @@ var overlayMaps = {
 
 var myMap = L.map("map", {
   center: [40.85, -74.071],
-  zoom: 11,
+  zoom: 10,
   layers: [light, custLayer]
 });
 // //https://github.com/johan/world.geo.json/tree/master/countries/USA/NJ  data HERE!
