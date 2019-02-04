@@ -707,36 +707,56 @@ var businesses = [
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
 var hospitalIcon = L.icon({
   iconUrl: 'marker-icon-red.png',
+  shadowUrl: 'marker-shadow.png',
   iconSize:     [25, 45], // size of the icon
   iconAnchor:   [25, 45], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -35]
+  popupAnchor:  [-3, -35],
+  shadowAnchor: [24,40]
 });
 
 var bergenHospitalIcon = L.icon({
   iconUrl: 'marker-icon-green.png',
+  shadowUrl: 'marker-shadow.png',
   iconSize:     [25, 45], // size of the icon
   iconAnchor:   [25, 45], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -35]
+  popupAnchor:  [-3, -35],
+  shadowAnchor: [24,40]
 });
 
 var essexCollegeIcon = L.icon({
   iconUrl: 'marker-icon-yellow.png',
+  shadowUrl: 'marker-shadow.png',
   iconSize:     [25, 45], // size of the icon
   iconAnchor:   [25, 45], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -35]
+  popupAnchor:  [-3, -35],
+  shadowAnchor: [24,40]
 });
 
 var airportIcon = L.icon({
   iconUrl: 'marker-icon-orange.png',
+  shadowUrl: 'marker-shadow.png',
   iconSize:     [25, 45], // size of the icon
   iconAnchor:   [25, 45], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -35]
+  popupAnchor:  [-3, -35],
+  shadowAnchor: [24,40]
 });
 var businessIcon = L.icon({
   iconUrl: 'marker-icon-grey.png',
+  shadowUrl: 'marker-shadow.png',
   iconSize:     [25, 45], // size of the icon
   iconAnchor:   [25, 45], // point of the icon which will correspond to marker's location
-  popupAnchor:  [-3, -35]
+  popupAnchor:  [-3, -35],
+  shadowAnchor: [24,40]
+});
+
+var slaymakerIcon = L.icon({
+  iconUrl: 'marker-icon-violet.png',
+  shadowUrl: 'marker-shadow.png',
+  iconSize: [25,45],
+  //shadowSize: [20,40], //size of the shadow
+  iconAnchor: [25,45],
+  popupAnchor:  [-3, -35],
+  shadowAnchor: [24,40] //point of the icon for the shadow
 });
 
 
@@ -790,13 +810,13 @@ for (var i = 0; i < businesses.length; i++) {
 }
 for (var i = 0; i < slaymakerNJCustomers.length; i++) {
   slaymakerNJProspects.push(
-    L.marker(slaymakerNJCustomers[i].location, {icon: businessIcon})
+    L.marker(slaymakerNJCustomers[i].location, {icon: slaymakerIcon})
       .bindPopup("<h1>" + slaymakerNJCustomers[i].name + "</h1> <hr> <h2>" + slaymakerNJCustomers[i].address + "</h2> <h2>" + slaymakerNJCustomers[i].city + "</h2>")
     );
 }
 for (var i = 0; i < slaymakerPACustomers.length; i++) {
   slaymakerPAProspects.push(
-    L.marker(slaymakerPACustomers[i].location, {icon: businessIcon})
+    L.marker(slaymakerPACustomers[i].location, {icon: slaymakerIcon})
       .bindPopup("<h1>" + slaymakerPACustomers[i].name + "</h1> <hr> <h2>" + slaymakerPACustomers[i].address + "</h2> <h2>" + slaymakerPACustomers[i].city + "</h2>")
     );
 }
