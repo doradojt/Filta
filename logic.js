@@ -875,7 +875,7 @@ var myMap = L.map("map", {
 // //https://www.color-hex.com/ good resource for color hex!!!
 
 // USE THIS FOR ZIP CODES
-var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=fPGX4Uty%2FyH8OXLQudSzpeFKlKI%3D&Expires=1549147284&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=iFlob2RBxBxgU3bT9m32DNpNETg%3D&Expires=1549377486&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
 // var link =
 // "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=zfPUIqPNOMy5HAiXpeiillUb9K0%3D&Expires=1548991276&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
