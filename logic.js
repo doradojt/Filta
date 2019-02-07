@@ -91,11 +91,166 @@ var currentCustomer= [
   city: "Demarest, NJ 07627"
 },
 {
+  location: [41.057710, -74.136980],
+  name: "Ramsey High School",
+  address: "256 E. Main Street",
+  city: "Ramsey, NJ 07446"
+},
+{
+  location: [40.850390, -74.012120],
+  name: "Samsung",
+  address: "85 Challenger Road",
+  city: "Ridgefield Park, NJ 07660"
+},
+{
   location: [41.073580, -74.133440],
   name: "Don Bosco Prep",
   address: "492 N. Franklin Turnpike",
   city: "Ramsey, NJ 07446"
 }];
+
+var bergenLeads = [
+  {
+  location: [40.943960, -74.127600],
+  name: "Medco Health Solutions, Inc",
+  address: "19-00 Pollitt Drive",
+  city: "Fair Lawn, NJ 07410",
+  phone: "(201) 269-5150"
+  },
+  {
+  location: [40.943740, -74.107350],
+  name: "FairLawn School District",
+  address: "37-01 Fair Lawn Avenue",
+  city: "Fair Lawn, NJ 07410",
+  phone: "(201) 794-5500"
+  },
+  {
+  location: [40.943700, -74.128890],
+  name: "Habit Burger",
+  address: "3101 Promenade Blvd",
+  city: "Fair Lawn, NJ 07410",
+  phone: "(201) 475-3800"
+  },
+  {
+  location: [40.945750, -74.146960],
+  name: "Lincoln Grill Cafe",
+  address: "115 Lincoln Avenue",
+  city: "Fair Lawn, NJ 07410",
+  phone: "(973) 310-3300"
+  },
+  {
+  location: [40.945750, -74.146960],
+  name: "Lincoln Grill Cafe",
+  address: "115 Lincoln Avenue",
+  city: "Fair Lawn, NJ 07410",
+  phone: "(973) 310-3300"
+  },
+  {
+  location: [41.067400, -74.172140],
+  name: "UPS - Corporate",
+  address: "340 MacArthur Blvd",
+  city: "Mahwah, NJ 07430",
+  phone: "NA"
+  },
+  {
+  location: [41.058480, -74.143620],
+  name: "Potomac Group Home Corp",
+  address: "38 N. Central Ave",
+  city: "Ramsey, NJ 07446",
+  phone: "(201) 308-2337"
+  },
+  {
+  location: [41.057710, -74.136980],
+  name: "Bobcat's Texas BBQ",
+  address: "112 E Main Street",
+  city: "Ramsey, NJ 07446",
+  phone: "(201) 962-9755"
+  },
+  {
+  location: [41.061910, -74.122480],
+  name: "Uncle Giuseppe's Marketplace",
+  address: "10 Triangle Plaza",
+  city: "Ramsey, NJ 07446",
+  phone: "(201) 995-6800"
+  },
+  {
+  location: [41.068880, -74.134450],
+  name: "Shannon Rose Irish Pub",
+  address: "1200 NJ-17",
+  city: "Ramsey, NJ 07446",
+  phone: "(201) 962-7602"
+  },
+  {
+  location: [40.992901, -74.031982],
+  name: "Farmhouse",
+  address: "301 Center Avenue",
+  city: "Westwood, NJ 07675",
+  phone: "(201) 664-8424"
+  },
+  {
+  location: [40.994500, -74.036240],
+  name: "Westwood House",
+  address: "100 Madison Avenue #1",
+  city: "Westwood, NJ 07675",
+  phone: "(201) 666-1778"
+  },
+  {
+  location: [40.991630, -74.033470],
+  name: "The Iron Horse Restaurant",
+  address: "20 Washington Avenue",
+  city: "Westwood, NJ 07675",
+  phone: "(201) 666-9682"
+  },
+  {
+  location: [40.992901, -74.031982],
+  name: "Kimchi Smoke",
+  address: "301 Center Avenue",
+  city: "Westwood, NJ 07675",
+  phone: "(201) 497-6333"
+  },
+  {
+  location: [40.992901, -74.031982],
+  name: "Kimchi Smoke",
+  address: "301 Center Avenue",
+  city: "Westwood, NJ 07675",
+  phone: "(201) 497-6333"
+  },
+  {
+  location: [41.040290, -74.063280],
+  name: "Hertz Corp",
+  address: "225 Brae Blvd",
+  city: "Park Ridge, NJ 07656",
+  phone: "(800) 654-3131"
+  },
+  {
+  location: [41.044020, -74.063020],
+  name: "Park Ridge Marriott",
+  address: "300 Brae Blvd",
+  city: "Park Ridge, NJ 07656",
+  phone: "(201) 307-0800"
+  },
+  {
+  location: [41.023140, -74.023750],
+  name: "Bigfork Valley Hospital",
+  address: "251 Knoll Drive",
+  city: "Park Ridge, NJ 07656",
+  phone: "(218) 743-3177"
+  },
+  {
+  location: [41.038890, -74.034180],
+  name: "Atrium Senior Living of Park Ridge",
+  address: "120 Noyes Drive",
+  city: "Park Ridge, NJ 07656",
+  phone: "(201) 505-1777"
+  },
+  {
+  location: [41.037050, -74.058270],
+  name: "103 Prime at Valentino's",
+  address: "103 Spring Valley Road",
+  city: "Park Ridge, NJ 07656",
+  phone: "(201) 391-2220"
+  },
+];
 
 var essexHospitals = [
   { 
@@ -167,6 +322,13 @@ var essexHospitals = [
   address: "560 Berkeley Avenue",
   city: "East Orange, NJ",
   beds: "176"  
+  },
+  {
+  location: [40.851710, -74.234360],
+  name: "Essex County Hospital",
+  address: "204 Grove Avenue",
+  city: "Cedar Grove, NJ 07009",
+  beds: "NA"  
   }
 ];
 
@@ -758,6 +920,15 @@ var slaymakerIcon = L.icon({
   popupAnchor:  [-3, -35],
   shadowAnchor: [24,40] //point of the icon for the shadow
 });
+var bergenLeadsIcon = L.icon({
+  iconUrl: 'filtavan.png',
+  shadowUrl: 'marker-shadow.png',
+  iconSize: [45,25],
+  //shadowSize: [20,40], //size of the shadow
+  iconAnchor: [25,25],
+  popupAnchor:  [-3, -35],
+  shadowAnchor: [24,30] //point of the icon for the shadow
+});
 
 
 var currentCustomerMarkers = [];
@@ -768,6 +939,7 @@ var airportProspects = [];
 var businessProspects = [];
 var slaymakerNJProspects = [];
 var slaymakerPAProspects = [];
+var bergenLeadProspects = [];
 
 for (var i = 0; i < currentCustomer.length; i++) {
   currentCustomerMarkers.push(
@@ -820,6 +992,12 @@ for (var i = 0; i < slaymakerPACustomers.length; i++) {
       .bindPopup("<h1>" + slaymakerPACustomers[i].name + "</h1> <hr> <h2>" + slaymakerPACustomers[i].address + "</h2> <h2>" + slaymakerPACustomers[i].city + "</h2>")
     );
 }
+for (var i = 0; i < bergenLeads.length; i++) {
+  bergenLeadProspects.push(
+    L.marker(bergenLeads[i].location, {icon: bergenLeadsIcon})
+      .bindPopup("<h1>" + bergenLeads[i].name + "</h1> <hr> <h2>" + bergenLeads[i].address + "</h2> <h2>" + bergenLeads[i].city + "</h2><h3>" + bergenLeads[i].phone + "</h3>")
+    );
+}
 
 var custLayer = L.layerGroup(currentCustomerMarkers);
 var essexHospitalProspectLayer = L.layerGroup(essexHospitalProspects);
@@ -828,7 +1006,8 @@ var essexCollegeProspectLayer = L.layerGroup(essexCollegeProspects);
 var airportProspectLayer = L.layerGroup(airportProspects);
 var businessProspectLayer = L.layerGroup(businessProspects);
 var slaymakerProspectLayer = L.layerGroup(slaymakerNJProspects);
-var slaymakerPAProspectLayer = L.layerGroup(slaymakerPAProspects)
+var slaymakerPAProspectLayer = L.layerGroup(slaymakerPAProspects);
+var bergenLeadProspectLayer = L.layerGroup(bergenLeadProspects)
 
 
 var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -860,7 +1039,8 @@ var overlayMaps = {
   "Prospective Airports": airportProspectLayer,
   "Prospective Businesses": businessProspectLayer,
   "Slaymaker NJ": slaymakerProspectLayer,
-  "Slaymaker PA": slaymakerPAProspectLayer
+  "Slaymaker PA": slaymakerPAProspectLayer,
+  "Bergen Leads": bergenLeadProspectLayer,
 };
 
 // var mapLayer = MQ.mapLayer(),
@@ -875,7 +1055,7 @@ var myMap = L.map("map", {
 // //https://www.color-hex.com/ good resource for color hex!!!
 
 // USE THIS FOR ZIP CODES
-var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=fsCA0MAldAGpzvda9apxYLn0nFQ%3D&Expires=1549472125&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=1NbDED2CKUfgBuA%2BMOD6IExGGcI%3D&Expires=1549509383&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
 // var link =
 // "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=zfPUIqPNOMy5HAiXpeiillUb9K0%3D&Expires=1548991276&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
