@@ -1055,8 +1055,11 @@ var myMap = L.map("map", {
 // //https://www.color-hex.com/ good resource for color hex!!!
 
 // USE THIS FOR ZIP CODES
-var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=7PeKiRxz%2BusYdOfPvAAJckAzRxs%3D&Expires=1549566824&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
+//var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=7PeKiRxz%2BusYdOfPvAAJckAzRxs%3D&Expires=1549566824&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
+var URL = "/nj_new_jersey_zip_codes_geo.min.json";
+var URLTwo = "/pa_pennsylvania_zip_codes_geo.min.json";
+ 
 // var link =
 // "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=zfPUIqPNOMy5HAiXpeiillUb9K0%3D&Expires=1548991276&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
@@ -1155,13 +1158,15 @@ var optionZips = ['08837','08818','08871','08840','08857','08859','08861','07001
 var geojson;
 
 d3.json(URL, function(data) {
-  
-  //for (var i = 0; i < NG07.length; i++) {
-  //check with Anthony about this loop
+  //d3.json(URLTwo, function(data) {
+
+  //figure out how to load two json files but run 1 function try the link below to merge the json files
+  //https://stackoverflow.com/questions/39056789/how-to-fetch-data-from-multiple-json-for-creating-a-barchart-using-d3-js
+
     geojson = L.choropleth(data, {
 
-      valueProperty: "GEOID10",//attempt  to make the zipcode choropleth
-      
+      //valueProperty: "GEOID10",//attempt  to make the zipcode choropleth with Newark OpenData, switch below to Geoid if switches back
+      valueProperty: "ZCTA5CE10",
       // if (i == valueProperty) {
       //   color: "#ffffb2";
       // } else {
@@ -1184,7 +1189,7 @@ d3.json(URL, function(data) {
       onEachFeature: function(feature, layer) {
         var found = 0
         for(var x = 0; x<zips.length; x++){
-          if(feature.properties.GEOID10 == zips[x]){
+          if(feature.properties.ZCTA5CE10 == zips[x]){
           found = 1
           break
           }
@@ -1193,7 +1198,7 @@ d3.json(URL, function(data) {
           layer.setStyle({fillColor:"#0000FF"})
         }
           for(var x = 0; x < slayZips.length; x++){
-            if(feature.properties.GEOID10 == slayZips[x]){
+            if(feature.properties.ZCTA5CE10 == slayZips[x]){
               found = 2
               break
               }
@@ -1202,7 +1207,7 @@ d3.json(URL, function(data) {
               layer.setStyle({fillColor:"#008080"})
             }
             for(var x = 0; x < optionZips.length; x++){
-              if(feature.properties.GEOID10 == optionZips[x]){
+              if(feature.properties.ZCTA5CE10 == optionZips[x]){
                 found = 3
                 break
                 }
@@ -1212,9 +1217,10 @@ d3.json(URL, function(data) {
               }
           
 
-        layer.bindPopup("ZipCode:" + feature.properties.GEOID10);
+        layer.bindPopup("ZipCode:" + feature.properties.ZCTA5CE10);
       },
     }).addTo(myMap);
+  //})
 });
 
 // Pass our map layers into our layer control
