@@ -880,9 +880,9 @@ var hospitalIcon = L.icon({
 
 var bergenHospitalIcon = L.icon({
   //iconUrl: 'marker-icon-green.png',
-  iconUrl: 'hospitalicon.png',
+  iconUrl: 'medicine.png',
   shadowUrl: 'marker-shadow.png',
-  iconSize: [45,35],
+  iconSize: [28,28],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
   popupAnchor:  [-3, -35],
@@ -893,22 +893,22 @@ var essexCollegeIcon = L.icon({
  //iconUrl: 'marker-icon-yellow.png',
   iconUrl: 'mortarboard.png',
   shadowUrl: 'marker-shadow.png',
-  iconSize: [45,35],
+  iconSize: [28,28],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
   popupAnchor:  [-3, -35],
-  shadowAnchor: [24,30] //point of the icon for the shadow
+  shadowAnchor: [26,42] //point of the icon for the shadow
 });
 
 var airportIcon = L.icon({
   //iconUrl: 'marker-icon-orange.png',
-  iconUrl: 'filtavan.png',
+  iconUrl: 'airplane-shape.png',
   shadowUrl: 'marker-shadow.png',
-  iconSize: [45,25],
+  iconSize: [28,28],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
   popupAnchor:  [-3, -35],
-  shadowAnchor: [24,30] //point of the icon for the shadow
+  shadowAnchor: [28,39] //point of the icon for the shadow
 });
 var businessIcon = L.icon({
   //iconUrl: 'marker-icon-grey.png',
@@ -918,7 +918,7 @@ var businessIcon = L.icon({
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
   popupAnchor:  [-3, -35],
-  shadowAnchor: [24,30] //point of the icon for the shadow
+  shadowAnchor: [7,40] //point of the icon for the shadow
 });
 
 var slaymakerIcon = L.icon({
@@ -929,7 +929,7 @@ var slaymakerIcon = L.icon({
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
   popupAnchor:  [-3, -35],
-  shadowAnchor: [24,30] //point of the icon for the shadow
+  shadowAnchor: [7,40] //point of the icon for the shadow
 });
 var bergenLeadsIcon = L.icon({
   iconUrl: 'filtavan.png',
@@ -938,7 +938,7 @@ var bergenLeadsIcon = L.icon({
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
   popupAnchor:  [-3, -35],
-  shadowAnchor: [24,30] //point of the icon for the shadow
+  shadowAnchor: [7,40] //point of the icon for the shadow
 });
 
 
@@ -1070,7 +1070,7 @@ var myMap = L.map("map", {
 
 var URL = "/nj_new_jersey_zip_codes_geo.min.json";
 var URLTwo = "/pa_pennsylvania_zip_codes_geo.min.json";
-var URLThree ="/merged_file.json";
+var URLThree ="/data.json";
 // var link =
 // "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=zfPUIqPNOMy5HAiXpeiillUb9K0%3D&Expires=1548991276&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
@@ -1148,6 +1148,8 @@ var slayZips = ["18963", "08809", "18925","18972","08822","08868","08825","18929
 
 var optionZips = ['08837','08818','08871','08840','08857','08859','08861','07001','08862','08872','08863','07008','08879','07064','08882','07067','08884','07077','08906','07080','07095','08989','08512','08536','08899','08810','08824','08828','08831','08830','08846','08850','07747','08852','08854','08855','08901','08902','08903','08904','08933','08820','08816','08817','08832','07715','08730','07717','07719','07720','08736','07723','08750','07753','07754','08526','07701','07756','08501','07762','07751','08720','07710','07799','07711','07799','07711','07718','07721','07702','07722','07726','07703','07727','07704','07728','07716','07730','07724','07731','07733','07732','07735','07734','07746','07737','07738','07739','07763','07740','07765','07748','08510','07750','07712','07752','07755','08514','07757','07758','08535','07760','08555','07764','07709'];
 
+var dignamZips = ['08807','08821','07034','07076','08869','08876','08835','08844','08836','08805','08853','08812','07035','07081','08823','07405','07045','07083','08873','07046','07088','07005','08875','07062','07090','07054','08880','07016','07091','07058','08890','07023','07092','07082','07027','07857','07033','07856','07828','07060','07836','07061','07853','07063','07870','07438','07066','07801','07082','07901','07803','07902','07806','07922','07845','07974','07059','07847','07069','07849','07850','07852','07869','07876','07885','07926','07930','07945','07970','07834','07842','07866','07878','07927','07928','07932','07933','07935','07936','07940','07946','07950','07960','07961','07962','07963','07976','07980','07939','07981','07920','07999','07921','07440','07924','07440','07924','07444','07931','07457','07934','07938','07977','07978','08502','08504','08528','08553','08558'];
+
 //NJ-01 and NJ-12 zipcodes
 
 // d3.json(link, function(data) {
@@ -1177,63 +1179,72 @@ d3.json(URL, function(data) {
   //figure out how to load two json files but run 1 function try the link below to merge the json files
   //https://stackoverflow.com/questions/39056789/how-to-fetch-data-from-multiple-json-for-creating-a-barchart-using-d3-js
 
-    geojson = L.choropleth(data, {
+  geojson = L.choropleth(data, {
 
-      //valueProperty: "GEOID10",//attempt  to make the zipcode choropleth with Newark OpenData, switch below to Geoid if switches back
-      valueProperty: "ZCTA5CE10",
-      // if (i == valueProperty) {
-      //   color: "#ffffb2";
-      // } else {
-      //   color: "#b10026";
-      // }
-      
-      scale: ["#ffffb2", "#ffffb2"],
+    //valueProperty: "GEOID10",//attempt  to make the zipcode choropleth with Newark OpenData, switch below to Geoid if switches back
+    valueProperty: "ZCTA5CE10",
+    // if (i == valueProperty) {
+    //   color: "#ffffb2";
+    // } else {
+    //   color: "#b10026";
+    // }
+    
+    scale: ["#eedfcc", "#eedfcc"],
 
-      // Number of breaks in step range
-      steps: 10,
+    // Number of breaks in step range
+    steps: 10,
 
-      mode: "q",
-      style: {
-        //border color
-        color: "#fff",
-        weight: 1.5,
-        fillOpacity: 0.6
-      },
+    mode: "q",
+    style: {
+      //border color
+      color: "#fff",
+      weight: 1.5,
+      fillOpacity: 0.6
+    },
 
-      onEachFeature: function(feature, layer) {
-        var found = 0
-        for(var x = 0; x<zips.length; x++){
-          if(feature.properties.ZCTA5CE10 == zips[x]){
-          found = 1
-          break
+    onEachFeature: function(feature, layer) {
+      var found = 0
+      for(var x = 0; x<zips.length; x++){
+        if(feature.properties.ZCTA5CE10 == zips[x]){
+        found = 1
+        break
+        }
+      }
+        if(found == 1){
+        layer.setStyle({fillColor:"#0000FF"})
+      }
+        for(var x = 0; x < slayZips.length; x++){
+          if(feature.properties.ZCTA5CE10 == slayZips[x]){
+            found = 2
+            break
+            }
           }
-        }
-          if(found == 1){
-          layer.setStyle({fillColor:"#0000FF"})
-        }
-          for(var x = 0; x < slayZips.length; x++){
-            if(feature.properties.ZCTA5CE10 == slayZips[x]){
-              found = 2
+            if(found == 2){
+            layer.setStyle({fillColor:"#008080"})
+          }
+          for(var x = 0; x < optionZips.length; x++){
+            if(feature.properties.ZCTA5CE10 == optionZips[x]){
+              found = 3
               break
               }
             }
-              if(found == 2){
+              if(found == 3){
               layer.setStyle({fillColor:"#008080"})
             }
-            for(var x = 0; x < optionZips.length; x++){
-              if(feature.properties.ZCTA5CE10 == optionZips[x]){
-                found = 3
+            for(var x = 0; x < dignamZips.length; x++){
+              if(feature.properties.ZCTA5CE10 == dignamZips[x]){
+                found = 4
                 break
                 }
               }
-                if(found == 3){
-                layer.setStyle({fillColor:"#000080"})
+                if(found == 4){
+                layer.setStyle({fillColor:"#FF6347"})
               }
-          
+        
 
-        layer.bindPopup("ZipCode:" + feature.properties.ZCTA5CE10);
-      },
-    }).addTo(myMap);
+      layer.bindPopup("ZipCode:" + feature.properties.ZCTA5CE10);
+    },
+  }).addTo(myMap);
   //})
 });
 
