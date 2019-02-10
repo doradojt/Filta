@@ -1229,7 +1229,7 @@ d3.json(URL, function(data) {
               }
             }
               if(found == 3){
-              layer.setStyle({fillColor:"#008080"})
+              layer.setStyle({fillColor:"#7fffd4"})
             }
             for(var x = 0; x < dignamZips.length; x++){
               if(feature.properties.ZCTA5CE10 == dignamZips[x]){
@@ -1248,6 +1248,80 @@ d3.json(URL, function(data) {
   //})
 });
 
+d3.json(URLTwo, function(data) {
+  //d3.json(URLTwo, function(data) {
+
+  //figure out how to load two json files but run 1 function try the link below to merge the json files
+  //https://stackoverflow.com/questions/39056789/how-to-fetch-data-from-multiple-json-for-creating-a-barchart-using-d3-js
+
+  geojson = L.choropleth(data, {
+
+    //valueProperty: "GEOID10",//attempt  to make the zipcode choropleth with Newark OpenData, switch below to Geoid if switches back
+    valueProperty: "ZCTA5CE10",
+    // if (i == valueProperty) {
+    //   color: "#ffffb2";
+    // } else {
+    //   color: "#b10026";
+    // }
+    
+    scale: ["#eedfcc", "#eedfcc"],
+
+    // Number of breaks in step range
+    steps: 10,
+
+    mode: "q",
+    style: {
+      //border color
+      color: "#fff",
+      weight: 1.5,
+      fillOpacity: 0.6
+    },
+
+    onEachFeature: function(feature, layer) {
+      var found = 0
+      for(var x = 0; x<zips.length; x++){
+        if(feature.properties.ZCTA5CE10 == zips[x]){
+        found = 1
+        break
+        }
+      }
+        if(found == 1){
+        layer.setStyle({fillColor:"#0000FF"})
+      }
+        for(var x = 0; x < slayZips.length; x++){
+          if(feature.properties.ZCTA5CE10 == slayZips[x]){
+            found = 2
+            break
+            }
+          }
+            if(found == 2){
+            layer.setStyle({fillColor:"#008080"})
+          }
+          for(var x = 0; x < optionZips.length; x++){
+            if(feature.properties.ZCTA5CE10 == optionZips[x]){
+              found = 3
+              break
+              }
+            }
+              if(found == 3){
+              layer.setStyle({fillColor:"#7fffd4"})
+            }
+            for(var x = 0; x < dignamZips.length; x++){
+              if(feature.properties.ZCTA5CE10 == dignamZips[x]){
+                found = 4
+                break
+                }
+              }
+                if(found == 4){
+                layer.setStyle({fillColor:"#FF6347"})
+              }
+        
+
+      layer.bindPopup("ZipCode:" + feature.properties.ZCTA5CE10);
+    },
+  }).addTo(myMap);
+  //})
+});
 // Pass our map layers into our layer control
 // Add the layer control to the map
 L.control.layers(baseMaps, overlayMaps,{
