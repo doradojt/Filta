@@ -869,8 +869,8 @@ var businesses = [
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
 var hospitalIcon = L.icon({
   //iconUrl: 'marker-icon-red.png',
-  iconUrl: 'medicine.png',
-  shadowUrl: 'marker-shadow.png',
+  iconUrl: './icons/medicine.png',
+  shadowUrl: './icons/marker-shadow.png',
   iconSize: [30,30],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
@@ -880,8 +880,8 @@ var hospitalIcon = L.icon({
 
 var bergenHospitalIcon = L.icon({
   //iconUrl: 'marker-icon-green.png',
-  iconUrl: 'medicine.png',
-  shadowUrl: 'marker-shadow.png',
+  iconUrl: './icons/medicine.png',
+  shadowUrl: './icons/marker-shadow.png',
   iconSize: [28,28],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
@@ -891,8 +891,8 @@ var bergenHospitalIcon = L.icon({
 
 var essexCollegeIcon = L.icon({
  //iconUrl: 'marker-icon-yellow.png',
-  iconUrl: 'mortarboard.png',
-  shadowUrl: 'marker-shadow.png',
+  iconUrl: './icons/graduate-cap.png',
+  shadowUrl: './icons/marker-shadow.png',
   iconSize: [28,28],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
@@ -902,8 +902,8 @@ var essexCollegeIcon = L.icon({
 
 var airportIcon = L.icon({
   //iconUrl: 'marker-icon-orange.png',
-  iconUrl: 'airplane-shape.png',
-  shadowUrl: 'marker-shadow.png',
+  iconUrl: './icons/airplane-shape.png',
+  shadowUrl: './icons/marker-shadow.png',
   iconSize: [28,28],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
@@ -912,8 +912,8 @@ var airportIcon = L.icon({
 });
 var businessIcon = L.icon({
   //iconUrl: 'marker-icon-grey.png',
-  iconUrl: 'filtavan.png',
-  shadowUrl: 'marker-shadow.png',
+  iconUrl: './icons/filtavan.png',
+  shadowUrl: './icons/marker-shadow.png',
   iconSize: [45,25],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
@@ -923,8 +923,8 @@ var businessIcon = L.icon({
 
 var slaymakerIcon = L.icon({
   //iconUrl: 'marker-icon-violet.png',
-  iconUrl: 'filtavan.png',
-  shadowUrl: 'marker-shadow.png',
+  iconUrl: './icons/filtavan.png',
+  shadowUrl: './icons/marker-shadow.png',
   iconSize: [45,25],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
@@ -932,8 +932,8 @@ var slaymakerIcon = L.icon({
   shadowAnchor: [7,40] //point of the icon for the shadow
 });
 var bergenLeadsIcon = L.icon({
-  iconUrl: 'filtavan.png',
-  shadowUrl: 'marker-shadow.png',
+  iconUrl: './icons/filtavan.png',
+  shadowUrl: './icons/marker-shadow.png',
   iconSize: [45,25],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
@@ -1059,7 +1059,7 @@ var overlayMaps = {
 
 var myMap = L.map("map", {
   center: [40.85, -74.071],
-  zoom: 10,
+  zoom: 11,
   layers: [light, custLayer]
 });
 // //https://github.com/johan/world.geo.json/tree/master/countries/USA/NJ  data HERE!
@@ -1070,7 +1070,7 @@ var myMap = L.map("map", {
 
 var URL = "/nj_new_jersey_zip_codes_geo.min.json";
 var URLTwo = "/pa_pennsylvania_zip_codes_geo.min.json";
-var URLThree ="/data.json";
+
 // var link =
 // "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=zfPUIqPNOMy5HAiXpeiillUb9K0%3D&Expires=1548991276&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
