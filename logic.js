@@ -865,6 +865,15 @@ var businesses = [
   },
 ];
 
+var amusement = [
+  {
+  location: [40.136990,-74.440132],
+  name: "Six Flags Great Adventure",
+  address: "1 Six Flags Blvd",
+  city: "Jackson, NJ 08527"
+  },
+];
+
 
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
 var hospitalIcon = L.icon({
@@ -940,7 +949,15 @@ var bergenLeadsIcon = L.icon({
   popupAnchor:  [-3, -35],
   shadowAnchor: [7,40] //point of the icon for the shadow
 });
-
+var amusementIcon = L.icon({
+  iconUrl: './icons/ap.png',
+  //shadowUrl: './icons/marker-shadow.png',
+  iconSize: [45,25],
+  //shadowSize: [20,40], //size of the shadow
+  iconAnchor: [25,25],
+  popupAnchor:  [-3, -35],
+  //shadowAnchor: [7,40] //point of the icon for the shadow
+});
 
 var currentCustomerMarkers = [];
 var essexHospitalProspects = [];
@@ -951,6 +968,7 @@ var businessProspects = [];
 var slaymakerNJProspects = [];
 var slaymakerPAProspects = [];
 var bergenLeadProspects = [];
+var amusementProspects =[];
 
 for (var i = 0; i < currentCustomer.length; i++) {
   currentCustomerMarkers.push(
@@ -1009,6 +1027,12 @@ for (var i = 0; i < bergenLeads.length; i++) {
       .bindPopup("<h1>" + bergenLeads[i].name + "</h1> <hr> <h2>" + bergenLeads[i].address + "</h2> <h2>" + bergenLeads[i].city + "</h2><h3>" + bergenLeads[i].phone + "</h3>")
     );
 }
+for (var i = 0; i < amusement.length; i++) {
+  amusementProspects.push(
+    L.marker(amusement[i].location, {icon: amusementIcon})
+      .bindPopup("<h1>" + amusement[i].name + "</h1> <hr> <h2>" + amusement[i].address + "</h2> <h2>" + amusement[i].city + "</h2><h3>" + amusement[i].phone + "</h3>")
+    );
+}
 
 var custLayer = L.layerGroup(currentCustomerMarkers);
 var essexHospitalProspectLayer = L.layerGroup(essexHospitalProspects);
@@ -1018,7 +1042,8 @@ var airportProspectLayer = L.layerGroup(airportProspects);
 var businessProspectLayer = L.layerGroup(businessProspects);
 var slaymakerProspectLayer = L.layerGroup(slaymakerNJProspects);
 var slaymakerPAProspectLayer = L.layerGroup(slaymakerPAProspects);
-var bergenLeadProspectLayer = L.layerGroup(bergenLeadProspects)
+var bergenLeadProspectLayer = L.layerGroup(bergenLeadProspects);
+var amusementProspectLayer = L.layerGroup(amusementProspects)
 
 
 var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -1052,6 +1077,7 @@ var overlayMaps = {
   "Slaymaker NJ": slaymakerProspectLayer,
   "Slaymaker PA": slaymakerPAProspectLayer,
   "Bergen Leads": bergenLeadProspectLayer,
+  "Amusement Park": amusementProspectLayer
 };
 
 // var mapLayer = MQ.mapLayer(),
