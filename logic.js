@@ -873,6 +873,15 @@ var amusement = [
   city: "Jackson, NJ 08527"
   },
 ];
+ 
+var base = [
+  {
+  location: [40.663309, -74.271878],
+  name: "Operations Base",
+  address: "210 W. Clay Avenue",
+  city: "Roselle Park, NJ 07204"  
+  },
+];
 
 
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
@@ -958,6 +967,15 @@ var amusementIcon = L.icon({
   popupAnchor:  [-3, -35],
   //shadowAnchor: [7,40] //point of the icon for the shadow
 });
+var baseIcon = L.icon({
+  iconUrl: './icons/base.png',
+  shadowUrl: './icons/marker-shadow.png',
+  iconSize: [30,30],
+  shadowSize: [30,40], //size of the shadow
+  iconAnchor: [25,25],
+  popupAnchor:  [-3, -35],
+  shadowAnchor: [22,34] //point of the icon for the shadow
+});
 
 var currentCustomerMarkers = [];
 var essexHospitalProspects = [];
@@ -969,6 +987,7 @@ var slaymakerNJProspects = [];
 var slaymakerPAProspects = [];
 var bergenLeadProspects = [];
 var amusementProspects =[];
+var baseProspects = [];
 
 for (var i = 0; i < currentCustomer.length; i++) {
   currentCustomerMarkers.push(
@@ -1033,6 +1052,12 @@ for (var i = 0; i < amusement.length; i++) {
       .bindPopup("<h1>" + amusement[i].name + "</h1> <hr> <h2>" + amusement[i].address + "</h2> <h2>" + amusement[i].city + "</h2><h3>" + amusement[i].phone + "</h3>")
     );
 }
+for (var i = 0; i < base.length; i++) {
+  baseProspects.push(
+    L.marker(base[i].location, {icon: baseIcon})
+      .bindPopup("<h1>" + base[i].name + "</h1> <hr> <h2>" + base[i].address + "</h2> <h2>" + base[i].city + "</h2><h3>" + base[i].phone + "</h3>")
+    );
+}
 
 var custLayer = L.layerGroup(currentCustomerMarkers);
 var essexHospitalProspectLayer = L.layerGroup(essexHospitalProspects);
@@ -1043,7 +1068,8 @@ var businessProspectLayer = L.layerGroup(businessProspects);
 var slaymakerProspectLayer = L.layerGroup(slaymakerNJProspects);
 var slaymakerPAProspectLayer = L.layerGroup(slaymakerPAProspects);
 var bergenLeadProspectLayer = L.layerGroup(bergenLeadProspects);
-var amusementProspectLayer = L.layerGroup(amusementProspects)
+var amusementProspectLayer = L.layerGroup(amusementProspects);
+var baseProspectLayer = L.layerGroup(baseProspects);
 
 
 var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -1077,7 +1103,8 @@ var overlayMaps = {
   "Slaymaker NJ": slaymakerProspectLayer,
   "Slaymaker PA": slaymakerPAProspectLayer,
   "Bergen Leads": bergenLeadProspectLayer,
-  "Amusement Park": amusementProspectLayer
+  "Amusement Park": amusementProspectLayer,
+  "Operations Base": baseProspectLayer
 };
 
 // var mapLayer = MQ.mapLayer(),
@@ -1192,7 +1219,6 @@ var dignamZips = ['08807','08821','07034','07076','08869','08876','08835','08844
 //       };
 //     }
 //   }).addTo(map);
-// });
 
 
 
@@ -1350,6 +1376,9 @@ d3.json(URLTwo, function(data) {
 });
 // Pass our map layers into our layer control
 // Add the layer control to the map
+
+
+
 L.control.layers(baseMaps, overlayMaps,{
   collapsed: false}).addTo(myMap);
 
