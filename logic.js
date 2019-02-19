@@ -390,57 +390,63 @@ var essexColleges = [
   name: "Rutgers University Dental School",
   address: "110 Bergen Street",
   students: "375",
-  city: "Newark, NJ"
+  city: "Newark, NJ 07102"
   },
   {
   location: [40.743447, -74.191798],
   name: "Rutgers University Health Related Professionals",
   address: "65 Bergen Street",
   students: "1800",
-  city: "Newark, NJ"
+  city: "Newark, NJ 07102"
   },
   {
   location: [40.744599, -74.170841],
   name: "Rutgers University School of Public Affairs and Administration",
   address: "111 Washington Street",
   students: "1200",
-  city: "Newark, NJ"
+  city: "Newark, NJ 07102"
   },
   {
   location: [40.795, -74.195],
   name: "Bloomfield College",
   address: "467 Franklin Street",
   students: "1947",
-  city: "Bloomfield, NJ"
+  city: "Bloomfield, NJ 07003"
   },
   {
   location: [40.834, -74.273],
   name: "Caldwell University",
   address: "120 Bloomfield Avenue",
   students: "2200",
-  city: "Caldwell, NJ"
+  city: "Caldwell, NJ 07006"
   },
   {
   location: [40.7387,-74.1784],
   name: "Essex County Community College",
   address: "303 University Avenue",
   students: "8175",
-  city: "Newark, NJ"
+  city: "Newark, NJ 07102"
   },
   {
   location: [40.738890, -74.190730],
   name: "Rutgers University Medical School",
   address: "185 S. Orange Avenue",
   students: "680",
-  city: "Newark, NJ"
+  city: "Newark, NJ 07102"
   },
   {
   location: [40.736670, -74.166290],
   name: "Seton Hall University School of Law",
   address :"1109 Raymond Blvd",
   students: "734",
-  city: "Newark, NJ"
+  city: "Newark, NJ 07102"
   },
+  {
+  location: [40.733929, -74.180634],
+  name: "NJ Institute of Technology",
+  address: "323 Dr. Martin Luther King Jr Blvd",
+  city: "Newark, NJ 07102"
+  }
 ];
 
 var slaymakerNJCustomers = [
@@ -863,6 +869,12 @@ var businesses = [
   address: "479 NJ-17",
   city: "Paramus, NJ 07652"
   },
+  {
+  location: [40.728451, -74.172737],
+  name: "Panasonic",
+  address: "2 Riverfront Plaza",
+  city: "Newark, NJ 07102"
+  },
 ];
 
 var amusement = [
@@ -871,6 +883,48 @@ var amusement = [
   name: "Six Flags Great Adventure",
   address: "1 Six Flags Blvd",
   city: "Jackson, NJ 08527"
+  },
+  {
+  location: [40.819920, -74.071571],
+  name: "Meadowlands Racetrack",
+  address:"1 Racetrack Drive",
+  city:"East Rutherford, NJ 07073"
+  },
+  {
+  location: [40.812072, -74.087661],
+  name:"NY Giants at Quest Diagnostics Center",
+  address:"1925 N. Service Road",
+  city:"East Rutherford, NJ 07073"
+  },
+  {
+  locations: [40.813831, -74.079193],
+  name: "MetLife Stadium",
+  address: "1 Metlife Stadium Drive",
+  city: "East Rutherford, NJ 07073"
+  },
+  {
+  location: [40.254585, -74.284338],
+  name: "Freehold Raceway",
+  address: "130 Park Avenue",
+  city: "Freehold, NJ 07728"
+  },
+  {
+  location: [40.309151, -74.015053],
+  name: "Monmouth Park Racetrack",
+  address: "175 Oceanport Avenue",
+  city: "Oceanport, NJ 07757"
+  },
+  {
+  location: [40.376518, -74.148216],
+  name: "PNC Bank Arts Center",
+  address: "116 Garden State Parkway",
+  city: "Holmdel, NJ 07733"
+  },
+  {
+  location: [40.732239, -74.170639],
+  name: "Prudential Center",
+  address: "25 Lafayette Street",
+  city: "Newark, NJ 07102"
   },
 ];
  
