@@ -897,7 +897,7 @@ var amusement = [
   city:"East Rutherford, NJ 07073"
   },
   {
-  locations: [40.813831, -74.079193],
+  location: [40.813831, -74.079193],
   name: "MetLife Stadium",
   address: "1 Metlife Stadium Drive",
   city: "East Rutherford, NJ 07073"
@@ -1176,7 +1176,8 @@ var myMap = L.map("map", {
 //var URL = "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/e801054d-2392-4413-af40-042e9bc986b9/njzctapolygon.geojson?Signature=7PeKiRxz%2BusYdOfPvAAJckAzRxs%3D&Expires=1549566824&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
 
 var URL = "/nj_new_jersey_zip_codes_geo.min.json";
-var URLTwo = "/pa_pennsylvania_zip_codes_geo.min.json";
+// took out URL TWO because it made the whole map bog down, PA is big!
+//var URLTwo = "/pa_pennsylvania_zip_codes_geo.min.json";
 
 // var link =
 // "https://og-production-open-data-newarknj-892364687672.s3.amazonaws.com/resources/95db8cad-3a8c-41a4-b8b1-4991990f07f3/njcountypolygonv2.geojson?Signature=zfPUIqPNOMy5HAiXpeiillUb9K0%3D&Expires=1548991276&AWSAccessKeyId=AKIAJJIENTAPKHZMIPXQ";
@@ -1353,81 +1354,81 @@ d3.json(URL, function(data) {
   }).addTo(myMap);
   //})
 });
+// removed because we are not making the choropleth on PA right now
+// d3.json(URLTwo, function(data) {
+//   //d3.json(URLTwo, function(data) {
 
-d3.json(URLTwo, function(data) {
-  //d3.json(URLTwo, function(data) {
+//   //figure out how to load two json files but run 1 function try the link below to merge the json files
+//   //https://stackoverflow.com/questions/39056789/how-to-fetch-data-from-multiple-json-for-creating-a-barchart-using-d3-js
 
-  //figure out how to load two json files but run 1 function try the link below to merge the json files
-  //https://stackoverflow.com/questions/39056789/how-to-fetch-data-from-multiple-json-for-creating-a-barchart-using-d3-js
+//   geojson = L.choropleth(data, {
 
-  geojson = L.choropleth(data, {
-
-    //valueProperty: "GEOID10",//attempt  to make the zipcode choropleth with Newark OpenData, switch below to Geoid if switches back
-    valueProperty: "ZCTA5CE10",
-    // if (i == valueProperty) {
-    //   color: "#ffffb2";
-    // } else {
-    //   color: "#b10026";
-    // }
+//     //valueProperty: "GEOID10",//attempt  to make the zipcode choropleth with Newark OpenData, switch below to Geoid if switches back
+//     valueProperty: "ZCTA5CE10",
+//     // if (i == valueProperty) {
+//     //   color: "#ffffb2";
+//     // } else {
+//     //   color: "#b10026";
+//     // }
     
-    scale: ["#eedfcc", "#eedfcc"],
+//     scale: ["#eedfcc", "#eedfcc"],
 
-    // Number of breaks in step range
-    steps: 10,
+//     // Number of breaks in step range
+//     steps: 10,
 
-    mode: "q",
-    style: {
-      //border color
-      color: "#fff",
-      weight: 1.5,
-      fillOpacity: 0.6
-    },
+//     mode: "q",
+//     style: {
+//       //border color
+//       color: "#fff",
+//       weight: 1.5,
+//       fillOpacity: 0.6
+//     },
 
-    onEachFeature: function(feature, layer) {
-      var found = 0
-      for(var x = 0; x<zips.length; x++){
-        if(feature.properties.ZCTA5CE10 == zips[x]){
-        found = 1
-        break
-        }
-      }
-        if(found == 1){
-        layer.setStyle({fillColor:"#0000FF"})
-      }
-        for(var x = 0; x < slayZips.length; x++){
-          if(feature.properties.ZCTA5CE10 == slayZips[x]){
-            found = 2
-            break
-            }
-          }
-            if(found == 2){
-            layer.setStyle({fillColor:"#008080"})
-          }
-          for(var x = 0; x < optionZips.length; x++){
-            if(feature.properties.ZCTA5CE10 == optionZips[x]){
-              found = 3
-              break
-              }
-            }
-              if(found == 3){
-              layer.setStyle({fillColor:"#7fffd4"})
-            }
-            for(var x = 0; x < dignamZips.length; x++){
-              if(feature.properties.ZCTA5CE10 == dignamZips[x]){
-                found = 4
-                break
-                }
-              }
-                if(found == 4){
-                layer.setStyle({fillColor:"#FF6347"})
-              }
+//     onEachFeature: function(feature, layer) {
+//       var found = 0
+//       for(var x = 0; x<zips.length; x++){
+//         if(feature.properties.ZCTA5CE10 == zips[x]){
+//         found = 1
+//         break
+//         }
+//       }
+//         if(found == 1){
+//         layer.setStyle({fillColor:"#0000FF"})
+//       }
+//         for(var x = 0; x < slayZips.length; x++){
+//           if(feature.properties.ZCTA5CE10 == slayZips[x]){
+//             found = 2
+//             break
+//             }
+//           }
+//             if(found == 2){
+//             layer.setStyle({fillColor:"#008080"})
+//           }
+//           for(var x = 0; x < optionZips.length; x++){
+//             if(feature.properties.ZCTA5CE10 == optionZips[x]){
+//               found = 3
+//               break
+//               }
+//             }
+//               if(found == 3){
+//               layer.setStyle({fillColor:"#7fffd4"})
+//             }
+//             for(var x = 0; x < dignamZips.length; x++){
+//               if(feature.properties.ZCTA5CE10 == dignamZips[x]){
+//                 found = 4
+//                 break
+//                 }
+//               }
+//                 if(found == 4){
+//                 layer.setStyle({fillColor:"#FF6347"})
+//               }
         
 
-      layer.bindPopup("ZipCode:" + feature.properties.ZCTA5CE10);
-    },
-  }).addTo(myMap);
-  //})
-});
+//       layer.bindPopup("ZipCode:" + feature.properties.ZCTA5CE10);
+//     },
+//   }).addTo(myMap);
+//   //})
+// });
 // Pass our map layers into our layer control
 // Add the layer control to the map
 
