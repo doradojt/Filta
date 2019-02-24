@@ -903,6 +903,12 @@ var amusement = [
   city: "East Rutherford, NJ 07073"
   },
   {
+  location: [40.819920, -74.071571],
+  name: "Fanduel Sportsbook",
+  address: "1 Racetrack Drive",
+  city: "East Rutherford, NJ 07073"
+  },
+  {
   location: [40.254585, -74.284338],
   name: "Freehold Raceway",
   address: "130 Park Avenue",
@@ -928,6 +934,122 @@ var amusement = [
   },
 ];
  
+var golf = [
+  {
+  location: [40.519520, -74.368210],
+  name: "Top Golf",
+  address: "1013 US-1",
+  city: "Edison, NJ 08817"
+  },
+  {
+  location: [40.957570, -74.000580],
+  name: "White Beeches Country Club",
+  address: "70 Haworth Drive",
+  city: "Haworth, NJ 07641"
+  },
+  {
+  location: [40.923770, -73.938010],
+  name: "Montammy Country Club",
+  address: "Montammy Drive",
+  city: "Alpine, NJ 07620"
+  },
+  {
+  location: [41.012380, -74.016530],
+  name: "Edgewood Country Club",
+  address: "449 Rivervale Road",
+  city: "Rivervale, NJ 07675"
+  },
+  {
+  location: [40.954790, -73.947380],
+  name: "Alpine Country Club",
+  address: "80 Anderson Avenue",
+  city: "Demarest, NJ 07627"
+  },
+  {
+  location: [40.918530, -73.977350],
+  name: "Knickerbocker Country Club",
+  address: "188 Knickerbocker Road",
+  city: "Tenafly, NJ 07670"
+  },
+  {
+  location: [41.048460, -74.134190],
+  name: "Ramsey Golf & Country Club",
+  address: "105 Lakeside Drive",
+  city: "Ramsey, NJ 07466"
+  },
+  {
+  location: [41.025730, -74.005110],
+  name: "Rivervale Country Club",
+  address: "660 Rivervale Road",
+  city: "Rivervale, NJ 07675"
+  },
+  {
+  location: [40.847740, -74.174910],
+  name: "Upper Montclair Golf Club",
+  address: "177 Hepburn Road",
+  citty: "Clifton, NJ 07012"
+  },
+  {
+  location: [40.948700, -74.233520],
+  name: "Preakness Hills",
+  address: "1050 Ratzer Road",
+  city: "Wayne, NJ 07470"
+  },
+  {
+  location: [40.861040, -74.287440],
+  name: "Mountain Ridge",
+  address: "713 Passaic Avenue",
+  city: "West Caldwell, NJ 07006"
+  },
+  {
+  location: [40.867060, -74.268900],
+  name: "Green Brook",
+  address: "100 W. Greenbrook Road",
+  city: "Caldwell, NJ"
+  },
+  {
+  location: [40.804520, -74.251430],
+  name: "Crestmont Golf Club",
+  address: "750 Eagle Rock Avenue",
+  city: "West Orange, NJ 07052"
+  },
+  {
+  location: [40.818050, -74.240600],
+  name: "Montclair Golf Club",
+  address: "25 Prospect Avenue",
+  city: "West Orange, NJ 07052"
+  },
+  {
+  location: [40.824890, -74.194420],
+  name: "Glen Ridge GC",
+  address: "555 Ridgewood Avenue",
+  city: "Glen Ridge, NJ 07028"
+  },
+  {
+  location: [40.788710, -74.257530],
+  name: "Essex County CC",
+  address: "350 Mt. Pleasant Avenue",
+  city: "West Orange, NJ 07052"
+  },
+  {
+  location: [40.765840, -74.377670],
+  name: "Brooklake",
+  address: "139 Brooklake Road",
+  city: "Florham Park, NJ 07932"
+  },
+  {
+  location: [40.818300, -74.277540],
+  name: "Essex Fells Country Club",
+  address: "219 Devon Road",
+  city: "Essex Fells, NJ 07021"
+  },
+  {
+  location :[40.943090, -74.202690],
+  name: "North Jersey CC",
+  address: "594 Hamburg Turnpike",
+  city: "Wayne, NJ 07470"
+  },
+];
 var base = [
   {
   location: [40.663309, -74.271878],
@@ -1030,6 +1152,16 @@ var baseIcon = L.icon({
   popupAnchor:  [-3, -35],
   shadowAnchor: [22,34] //point of the icon for the shadow
 });
+var golfIcon = L.icon({
+  iconUrl: './icons/golf.png',
+  shadowUrl: './icons/marker-shadow.png',
+  iconSize: [30,30],
+  shadowSize: [30,40], //size of the shadow
+  iconAnchor: [25,25],
+  popupAnchor:  [-3, -35],
+  shadowAnchor: [22,34] //point of the icon for the shadow
+});
+
 
 var currentCustomerMarkers = [];
 var essexHospitalProspects = [];
@@ -1042,6 +1174,7 @@ var slaymakerPAProspects = [];
 var bergenLeadProspects = [];
 var amusementProspects =[];
 var baseProspects = [];
+var golfProspects =[];
 
 for (var i = 0; i < currentCustomer.length; i++) {
   currentCustomerMarkers.push(
@@ -1112,6 +1245,12 @@ for (var i = 0; i < base.length; i++) {
       .bindPopup("<h1>" + base[i].name + "</h1> <hr> <h2>" + base[i].address + "</h2> <h2>" + base[i].city + "</h2><h3>" + base[i].phone + "</h3>")
     );
 }
+for (var i = 0; i < golf.length; i++) {
+  golfProspects.push(
+    L.marker(golf[i].location, {icon: golfIcon})
+      .bindPopup("<h1>" + golf[i].name + "</h1> <hr> <h2>" + golf[i].address + "</h2> <h2>" + golf[i].city + "</h2><h3>" + golf[i].phone + "</h3>")
+    );
+}
 
 var custLayer = L.layerGroup(currentCustomerMarkers);
 var essexHospitalProspectLayer = L.layerGroup(essexHospitalProspects);
@@ -1124,6 +1263,7 @@ var slaymakerPAProspectLayer = L.layerGroup(slaymakerPAProspects);
 var bergenLeadProspectLayer = L.layerGroup(bergenLeadProspects);
 var amusementProspectLayer = L.layerGroup(amusementProspects);
 var baseProspectLayer = L.layerGroup(baseProspects);
+var golfProspectLayer = L.layerGroup(golfProspects);
 
 
 var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -1158,7 +1298,8 @@ var overlayMaps = {
   "Slaymaker PA": slaymakerPAProspectLayer,
   "Bergen Leads": bergenLeadProspectLayer,
   "Amusement Park": amusementProspectLayer,
-  "Operations Base": baseProspectLayer
+  "Operations Base": baseProspectLayer,
+  "Golf Leads": golfProspectLayer,
 };
 
 // var mapLayer = MQ.mapLayer(),
