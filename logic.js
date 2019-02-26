@@ -932,6 +932,24 @@ var businesses = [
   address: "2 Riverfront Plaza",
   city: "Newark, NJ 07102"
   },
+  {
+  location: [40.889939,-74.259759],
+  name: "WillowBrook Mall",
+  address: "1400 Willowbrook Mall",
+  city: "Wayne, NJ 07470"
+  },
+  {
+  location: [40.7394, -74.3646],
+  name: "Short Hills Mall",
+  address: "1200 Morris Turnpike",
+  city: "Short Hills, NJ 07078"
+  },
+  {
+  location: [40.779184, -74.355292],
+  name: "Livingston Mall",
+  address: "112 Eisenhower Parkway",
+  city: "Livingston, NJ 07039"
+  },
 ];
 
 var amusement = [
@@ -1231,6 +1249,108 @@ var cateringHalls = [
   address: "100 Frank W. Burr Blvd",
   city: "Teaneck, NJ 07666"
   }, 
+  {
+  location: [41.104127, -74.160960],
+  name: "Sheraton Mahwah Hotel",
+  address: "1 International Blvd",
+  city: "Mahwah, NJ 07495"
+  },
+  {
+  location: [40.922591, -73.964799],
+  name: "Clinton Inn",
+  address: "145 Dean Drive",
+  city: "Tenafly, NJ 07670"
+  },
+  {
+  location: [40.95801, -74.154882],
+  name: "Macalusos Events & Banquets",
+  address: "55 4th Avenue",
+  city: "Hawthorne, NJ 07506"
+  },
+  {
+  location: [40.880581, -74.077161],
+  name: "The Elan Catering & Events",
+  address: "111 Route US 46 West",
+  city: "Lodi, NJ 07644"
+  },
+  {
+  location: [40.845812, -74.077874],
+  name: "The Fiesta",
+  address: "255 NJ 17",
+  city: "Wood-Ridge, NJ 07075"
+  },
+  {
+  location: [40.806747, -74.132183],
+  name: "The San Carlo",
+  address: "620 Stuyvensant Avenue",
+  city: "Lyndhurst, NJ 07071"
+  },
+  {
+  location: [40.842087, -74.036861],
+  name: "Empire Club",
+  address: "136 Mehrhof Road",
+  city: "Little Ferry, NJ 07643"
+  },
+  {
+  location: [40.773283, -74.041712],
+  name: "Lido Catering Hall",
+  address: "2600 Tonnelle Avenue",
+  city: "North Bergen, NJ 07109"
+  },
+  {
+  location: [40.891507, -74.268763],
+  name: "Crystal Falls Banquets",
+  address: "690 Route 46 East",
+  city: "Fairfield, NJ 07004"
+  },
+  {
+  location: [40.761215, -74.249752],
+  name: "The Appian Way",
+  address: "619 Langdon Street",
+  city: "Orange, NJ 07050"
+  },
+  {
+  location: [40.785237, -74.179944],
+  name: "Truffle Caterers & Banquet",
+  address: "100 Newark Avenue",
+  city: "Belleville, NJ 07109"
+  },
+  {
+  location: [40.829526, -74.241851],
+  name: "Richfield Regency",
+  address: "420 Bloomfield Avenue",
+  city: "Verona, NJ 07044"
+  },
+  {
+  location: [40.87084, -74.236696],
+  name: "Il Tulipano",
+  address: "1131 Pompton Avenue",
+  city: "Cedar Grove, NJ 07009"
+  },
+  {
+  location: [40.881962, -74.196776],
+  name: "Westmount Country Club",
+  address: "728 Rifle Camp Road",
+  city: "Woodland Park, NJ 07424"
+  },
+  {
+  location: [40.893941, -74.221224],
+  name: "The Bethwood",
+  address: "38 Lackawanna Avenue",
+  city: "Totowa, NJ 07512"
+  },
+  {
+  location: [40.94581, -74.093197],
+  name: "The Terrace",
+  address: "293 Paramus Road",
+  city: "Paramus, NJ 07652"
+  },
+  {
+  location: [40.88089, -74.24257],
+  name: "The Falls",
+  address: "215 NJ-23",
+  city: "Little Falls, NJ 07424"
+  },
 ];
 var highSchool = [
   {
