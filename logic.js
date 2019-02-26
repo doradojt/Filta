@@ -1118,117 +1118,117 @@ var base = [
 
 var cateringHalls = [
   {
-  location: [],
+  location: [40.877090, -74.115740],
   name: "The Venetian",
   address: "546 River Drive",
   city: "Garfield, NJ 07026"
   },
   {
-  location: [],
+  location: [40.997070, -74.060670],
   name: "Seasons",
   address: "644 Pascack Road",
   city: "Washington Township, NJ 07676"
   },
   {
-  location: [],
+  location: [40.980820, -74.300450],
   name: "The Legacy Castle",
   address: "141 Route 23",
   city: "Pompton Plains, NJ 07444"
   },
   {
-  location: [],
+  location: [40.989900, -74.001170],
   name: "Florentine Gardens",
   address: "97 Rivervale Road",
   city: "Rivervale, NJ 07675"
   },
   {
-  location: [],
+  location: [41.004200, -73.941210],
   name: "The Rockleigh",
   address: "26 Paris Avenue",
   city: "Rockleigh, NJ 07647"
   },
   {
-  location: [],
+  location: [40.835140, -74.052660],
   name: "The Graycliff",
   address: "122 Moonachie Avenue",
   city: "Moonachie, NJ 07074"
   },
   {
-  location: [],
+  location: [40.920790, -74.174790],
   name: "The Brownstone",
   address: "351 W. Broadway",
   city: "Paterson, NJ 07522"
   },
   {
-  location: [],
+  location: [40.788820, -74.171680],
   name: "Nanina's in the Park",
   address: "540 Mill Street",
   city: "Belleville, NJ 07109"
   },
   {
-  location: [],
+  location: [40.930560, -74.269600],
   name: "Cosmopolitan",
   address: "1377 Route 23",
   city: "Wayne, NJ 07470"
   },
   {
-  location: [],
+  location: [40.812620, -74.245560],
   name: "The Manor",
   address: "111 Prospect Avenue",
   city: "West Orange, NJ 07052"
   },
   {
-  location: [],
+  location: [40.862910, -74.193980],
   name: "Valley Regency",
   address: "1129 Valley Road",
   city: "Clifton, NJ 07043"
   },
   {
-  location: [],
+  location: [40.857300, -74.229800],
   name: "The Grove",
   address: "691 Pompton Avenue",
   city: "Cedar Grove, NJ 07009"
   },
   {
-  location: [],
+  location: [40.863170, -74.106050],
   name: "The Royal Manor",
   address: "454 Midland Avenue",
   city: "Garfield, NJ 07026"
   },
   {
-  location: [],
+  location: [40.803230, -74.241400],
   name: "Highlawn Pavilion",
   address: "1 Crest Drive",
   city: "West Orange, NJ 07052"
   },
   {
-  location: [],
+  location: [40.944990, -74.186450],
   name: "The Tides Estate",
   address: "1245 Belmont Avenue",
   city: "North Haledon, NJ 07508"
   },
   {
-  location: [],
+  location: [40.815490, -74.266910],
   name: "Pleasantdale Chateau",
   address: "757 Eagle Rock Avenue",
   city: "West Orange, NJ 07052"
   },
   {
-  location: [],
+  location: [40.813340, -74.258370],
   name: "The Wilshire Caterers",
   address: "350 Pleasant Valley Way",
   city: "West Orange, NJ 07052"
   },
   {
-  location: [],
+  location: [41.017090, -73.968810],
   name: "The Old Tappan Manor",
   address: "137 Orangeburgh Road",
   city: "Old Tappan, NJ 07675"
   },
   {
-  location: [],
+  location: [40.871960, -74.004870],
   name: "Teaneck Marriot at Glenpointe",
-  address: "100 Frank W Burr Blvd",
+  address: "100 Frank W. Burr Blvd",
   city: "Teaneck, NJ 07666"
   }, 
 ];
@@ -1328,6 +1328,16 @@ var highSchoolIcon = L.icon({
    popupAnchor:  [-3, -35],
    shadowAnchor: [26,42] //point of the icon for the shadow
  });
+ var cateringIcon = L.icon({
+  //iconUrl: 'marker-icon-yellow.png',
+   iconUrl: './icons/buffet.png',
+   shadowUrl: './icons/marker-shadow.png',
+   iconSize: [28,28],
+   //shadowSize: [20,40], //size of the shadow
+   iconAnchor: [25,25],
+   popupAnchor:  [-3, -35],
+   shadowAnchor: [26,42] //point of the icon for the shadow
+ });
 
 
 var airportIcon = L.icon({
@@ -1401,6 +1411,7 @@ var golfIcon = L.icon({
 
 var currentCustomerMarkers = [];
 var hospitalProspects = [];
+var cateringProspects = [];
 //var bergenHospitalProspects = [];
 var highSchoolProspects = [];
 var collegeProspects = [];
@@ -1438,6 +1449,12 @@ for (var i = 0; i < colleges.length; i++) {
   collegeProspects.push(
     L.marker(colleges[i].location, {icon: collegeIcon})
       .bindPopup("<h1>" + colleges[i].name + "</h1> <hr> <h2>" + colleges[i].address + " " + colleges[i].city + "</h2> <h3>" + "Students:" + colleges[i].students + "</h3>")
+    );
+}
+for (var i = 0; i < cateringHalls.length; i++) {
+  cateringProspects.push(
+    L.marker(cateringHalls[i].location, {icon: cateringIcon})
+      .bindPopup("<h1>" + cateringHalls[i].name + "</h1> <hr> <h2>" + cateringHalls[i].address + " " + cateringHalls[i].city + "</h2>")
     );
 }
 for (var i = 0; i < highSchool.length; i++) {
@@ -1508,6 +1525,7 @@ var bergenLeadProspectLayer = L.layerGroup(bergenLeadProspects);
 var amusementProspectLayer = L.layerGroup(amusementProspects);
 var baseProspectLayer = L.layerGroup(baseProspects);
 var golfProspectLayer = L.layerGroup(golfProspects);
+var cateringProspectLayer = L.layerGroup(cateringProspects);
 
 
 var light = L.tileLayer("https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}", {
@@ -1545,6 +1563,7 @@ var overlayMaps = {
   "Amusement Park": amusementProspectLayer,
   "Operations Base": baseProspectLayer,
   "Golf Leads": golfProspectLayer,
+  "Catering Halls": cateringProspectLayer,
 };
 
 // var mapLayer = MQ.mapLayer(),
