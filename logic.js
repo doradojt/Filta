@@ -252,7 +252,7 @@ var bergenLeads = [
   },
 ];
 
-var essexHospitals = [
+var hospitals = [
   { 
   location: [40.7947, -74.2649],
   name: "East Orange General Hospital",
@@ -329,10 +329,7 @@ var essexHospitals = [
   address: "204 Grove Avenue",
   city: "Cedar Grove, NJ 07009",
   beds: "NA"  
-  }
-];
-
-var bergenHospitals = [
+  },
   { 
   location: [40.90486, -73.955410],
   name: "Englewood Hospital",
@@ -353,6 +350,18 @@ var bergenHospitals = [
   address: "30 Prospect Avenue",
   city: "Hackensack, NJ",
   beds: "770"
+  },
+  {
+  location: [40.812350, -74.204340],
+  name: "Hackensack Meridian - Montclair",
+  address: "1 Bay Avenue",
+  city: "Montclair, NJ 07042"
+  },
+  {
+  location: [40.859370, -74.137670],
+  name: "St. Mary's General",
+  address: "350 Boulevard",
+  city: "Passaic, NJ 07055"
   },
   {
   location: [40.88192, -74.009086],
@@ -384,7 +393,7 @@ var bergenHospitals = [
   },
 ];
 
-var essexColleges = [
+var colleges = [
   {
   location: [40.741388, -74.190352],
   name: "Rutgers University Dental School",
@@ -440,6 +449,54 @@ var essexColleges = [
   address :"1109 Raymond Blvd",
   students: "734",
   city: "Newark, NJ 07102"
+  },
+  {
+  location: [40.745480, -74.243470],
+  name: "Seton Hall University",
+  address: "400 S. Orange Avenue",
+  city: "South Orange, NJ 07079"
+  },
+  {
+  location: [40.830520, -74.111770],
+  name: "Felician University",
+  address: "1 Felician Way",
+  city: "Rutherford, NJ 07070"
+  },
+  {
+  location: [40.678530, -74.234310],
+  name: "Kean University",
+  address: "1000 Morris Avenue",
+  city: "Union, NJ 07083"
+  },
+  {
+  location: [40.917030, -74.177890],
+  name: "Passaic Community College",
+  address: "1 College Blvd",
+  city: "Paterson, NJ 07505"
+  },
+  {
+  location: [40.951540, -74.093830],
+  name: "Bergen Community College",
+  address: "400 Paramus Road",
+  city: "Paramus, NJ 07652"
+  },
+  {
+  location: [40.943430, -74.200910],
+  name: "William Paterson College",
+  address: "300 Pompton Road",
+  city: "Wayne, NJ 07470"
+  },
+  {
+  location: [40.899150, -74.027130],
+  name: "Fairleigh Dickinson U.",
+  address: "1000 River Drive",
+  city: "Teaneck, NJ 07666"
+  },
+  {
+  location: [41.084390, -74.176750],
+  name: "Ramapo College",
+  address: "505 Ramapo Valley Road",
+  city: "Mahwah, NJ 07430"
   },
   {
   location: [40.733929, -74.180634],
@@ -1059,21 +1116,177 @@ var base = [
   },
 ];
 
+var cateringHalls = [
+  {
+  location: [],
+  name: "The Venetian",
+  address: "546 River Drive",
+  city: "Garfield, NJ 07026"
+  },
+  {
+  location: [],
+  name: "Seasons",
+  address: "644 Pascack Road",
+  city: "Washington Township, NJ 07676"
+  },
+  {
+  location: [],
+  name: "The Legacy Castle",
+  address: "141 Route 23",
+  city: "Pompton Plains, NJ 07444"
+  },
+  {
+  location: [],
+  name: "Florentine Gardens",
+  address: "97 Rivervale Road",
+  city: "Rivervale, NJ 07675"
+  },
+  {
+  location: [],
+  name: "The Rockleigh",
+  address: "26 Paris Avenue",
+  city: "Rockleigh, NJ 07647"
+  },
+  {
+  location: [],
+  name: "The Graycliff",
+  address: "122 Moonachie Avenue",
+  city: "Moonachie, NJ 07074"
+  },
+  {
+  location: [],
+  name: "The Brownstone",
+  address: "351 W. Broadway",
+  city: "Paterson, NJ 07522"
+  },
+  {
+  location: [],
+  name: "Nanina's in the Park",
+  address: "540 Mill Street",
+  city: "Belleville, NJ 07109"
+  },
+  {
+  location: [],
+  name: "Cosmopolitan",
+  address: "1377 Route 23",
+  city: "Wayne, NJ 07470"
+  },
+  {
+  location: [],
+  name: "The Manor",
+  address: "111 Prospect Avenue",
+  city: "West Orange, NJ 07052"
+  },
+  {
+  location: [],
+  name: "Valley Regency",
+  address: "1129 Valley Road",
+  city: "Clifton, NJ 07043"
+  },
+  {
+  location: [],
+  name: "The Grove",
+  address: "691 Pompton Avenue",
+  city: "Cedar Grove, NJ 07009"
+  },
+  {
+  location: [],
+  name: "The Royal Manor",
+  address: "454 Midland Avenue",
+  city: "Garfield, NJ 07026"
+  },
+  {
+  location: [],
+  name: "Highlawn Pavilion",
+  address: "1 Crest Drive",
+  city: "West Orange, NJ 07052"
+  },
+  {
+  location: [],
+  name: "The Tides Estate",
+  address: "1245 Belmont Avenue",
+  city: "North Haledon, NJ 07508"
+  },
+  {
+  location: [],
+  name: "Pleasantdale Chateau",
+  address: "757 Eagle Rock Avenue",
+  city: "West Orange, NJ 07052"
+  },
+  {
+  location: [],
+  name: "The Wilshire Caterers",
+  address: "350 Pleasant Valley Way",
+  city: "West Orange, NJ 07052"
+  },
+  {
+  location: [],
+  name: "The Old Tappan Manor",
+  address: "137 Orangeburgh Road",
+  city: "Old Tappan, NJ 07675"
+  },
+  {
+  location: [],
+  name: "Teaneck Marriot at Glenpointe",
+  address: "100 Frank W Burr Blvd",
+  city: "Teaneck, NJ 07666"
+  }, 
+];
+var highSchool = [
+  {
+  location: [40.959560, -74.048610],
+  name: "Bergen Catholic High School",
+  address: "1040 Oradell Avenue",
+  city: "Oradell, NJ 07649"
+  },
+  {
+  location: [40.955120, -74.096040],
+  name: "Paramus Catholic High School",
+  address: "425 Paramus Road",
+  city: "Paramus, NJ 07652"
+  },
+  {
+  location : [41.049990, -74.071940],
+  name: "St. Joseph's High School",
+  address: "40 Chestnut Ridge Road",
+  city: "Montvale, NJ 07645"
+  },
+  {
+  location: [40.996400, -74.074830],
+  name: "Immaculate Heart",
+  address: "500 Van Emburgh Avenue",
+  city: "Washington Township, NJ 07676"
+  },
+  {
+  location: [40.887300, -73.962290],
+  name: "Dwight-Englewood School",
+  address: "315 E. Palisade Avenue",
+  city: "Englewood, NJ 07631"
+  },
+  {
+  location: [40.954170, -74.035400],
+  name: "Oradell School",
+  address: "350 Propect Avenue",
+  city: "Oradell, NJ 07649"
+  },
+  {
+  location: [40.946110, -74.033740],
+  name: "River Dell High School",
+  address: "55 Pyle Street",
+  city: "Oradell, NJ 07649"
+  },
+  {
+  location: [40.525450, -74.495600],
+  name: "Rutgers Prep School",
+  address: "1345 Easton Avenue",
+  city: "Somerset, NJ 08873"
+  },
+];
+
 
 // Loop through the cities array and create one marker for each city, bind a popup containing its name and population add it to the map
 var hospitalIcon = L.icon({
   //iconUrl: 'marker-icon-red.png',
-  iconUrl: './icons/medicine.png',
-  shadowUrl: './icons/marker-shadow.png',
-  iconSize: [30,30],
-  //shadowSize: [20,40], //size of the shadow
-  iconAnchor: [25,25],
-  popupAnchor:  [-3, -35],
-  shadowAnchor: [24,37] //point of the icon for the shadow
-});
-
-var bergenHospitalIcon = L.icon({
-  //iconUrl: 'marker-icon-green.png',
   iconUrl: './icons/medicine.png',
   shadowUrl: './icons/marker-shadow.png',
   iconSize: [28,28],
@@ -1083,7 +1296,18 @@ var bergenHospitalIcon = L.icon({
   shadowAnchor: [24,37] //point of the icon for the shadow
 });
 
-var essexCollegeIcon = L.icon({
+// var bergenHospitalIcon = L.icon({
+//   //iconUrl: 'marker-icon-green.png',
+//   iconUrl: './icons/medicine.png',
+//   shadowUrl: './icons/marker-shadow.png',
+//   iconSize: [28,28],
+//   //shadowSize: [20,40], //size of the shadow
+//   iconAnchor: [25,25],
+//   popupAnchor:  [-3, -35],
+//   shadowAnchor: [24,37] //point of the icon for the shadow
+// });
+
+var collegeIcon = L.icon({
  //iconUrl: 'marker-icon-yellow.png',
   iconUrl: './icons/graduate-cap.png',
   shadowUrl: './icons/marker-shadow.png',
@@ -1093,6 +1317,18 @@ var essexCollegeIcon = L.icon({
   popupAnchor:  [-3, -35],
   shadowAnchor: [26,42] //point of the icon for the shadow
 });
+
+var highSchoolIcon = L.icon({
+  //iconUrl: 'marker-icon-yellow.png',
+   iconUrl: './icons/school.png',
+   shadowUrl: './icons/marker-shadow.png',
+   iconSize: [28,28],
+   //shadowSize: [20,40], //size of the shadow
+   iconAnchor: [25,25],
+   popupAnchor:  [-3, -35],
+   shadowAnchor: [26,42] //point of the icon for the shadow
+ });
+
 
 var airportIcon = L.icon({
   //iconUrl: 'marker-icon-orange.png',
@@ -1137,7 +1373,7 @@ var bergenLeadsIcon = L.icon({
 var amusementIcon = L.icon({
   iconUrl: './icons/ap.png',
   //shadowUrl: './icons/marker-shadow.png',
-  iconSize: [45,25],
+  iconSize: [35,25],
   //shadowSize: [20,40], //size of the shadow
   iconAnchor: [25,25],
   popupAnchor:  [-3, -35],
@@ -1164,9 +1400,10 @@ var golfIcon = L.icon({
 
 
 var currentCustomerMarkers = [];
-var essexHospitalProspects = [];
-var bergenHospitalProspects = [];
-var essexCollegeProspects = [];
+var hospitalProspects = [];
+//var bergenHospitalProspects = [];
+var highSchoolProspects = [];
+var collegeProspects = [];
 var airportProspects = [];
 var businessProspects = [];
 var slaymakerNJProspects = [];
@@ -1183,24 +1420,30 @@ for (var i = 0; i < currentCustomer.length; i++) {
     );
 }
 
-for (var i = 0; i < essexHospitals.length; i++) {
-  essexHospitalProspects.push(
-    L.marker(essexHospitals[i].location, {icon: hospitalIcon})
-      .bindPopup("<h1>" + essexHospitals[i].name + "</h1> <hr> <h2>" + essexHospitals[i].address + "</h2> <h2>" + essexHospitals[i].city + "</h2> <h3>" + "Beds:"+ essexHospitals[i].beds + "</h3>")
+for (var i = 0; i < hospitals.length; i++) {
+  hospitalProspects.push(
+    L.marker(hospitals[i].location, {icon: hospitalIcon})
+      .bindPopup("<h1>" + hospitals[i].name + "</h1> <hr> <h2>" + hospitals[i].address + "</h2> <h2>" + hospitals[i].city + "</h2> <h3>" + "Beds:"+ hospitals[i].beds + "</h3>")
     );
 }
 
-for (var i = 0; i < bergenHospitals.length; i++) {
-  bergenHospitalProspects.push(
-    L.marker(bergenHospitals[i].location, {icon: bergenHospitalIcon})
-      .bindPopup("<h1>" + bergenHospitals[i].name + "</h1> <hr> <h2>" + bergenHospitals[i].address + " " + bergenHospitals[i].city + "</h2> <h3>" + "Beds:" + bergenHospitals[i].beds + "</h3>")
+// for (var i = 0; i < bergenHospitals.length; i++) {
+//   bergenHospitalProspects.push(
+//     L.marker(bergenHospitals[i].location, {icon: bergenHospitalIcon})
+//       .bindPopup("<h1>" + bergenHospitals[i].name + "</h1> <hr> <h2>" + bergenHospitals[i].address + " " + bergenHospitals[i].city + "</h2> <h3>" + "Beds:" + bergenHospitals[i].beds + "</h3>")
+//     );
+//}
+
+for (var i = 0; i < colleges.length; i++) {
+  collegeProspects.push(
+    L.marker(colleges[i].location, {icon: collegeIcon})
+      .bindPopup("<h1>" + colleges[i].name + "</h1> <hr> <h2>" + colleges[i].address + " " + colleges[i].city + "</h2> <h3>" + "Students:" + colleges[i].students + "</h3>")
     );
 }
-
-for (var i = 0; i < essexColleges.length; i++) {
-  essexCollegeProspects.push(
-    L.marker(essexColleges[i].location, {icon: essexCollegeIcon})
-      .bindPopup("<h1>" + essexColleges[i].name + "</h1> <hr> <h2>" + essexColleges[i].address + " " + essexColleges[i].city + "</h2> <h3>" + "Students:" + essexColleges[i].students + "</h3>")
+for (var i = 0; i < highSchool.length; i++) {
+  highSchoolProspects.push(
+    L.marker(highSchool[i].location, {icon: highSchoolIcon})
+      .bindPopup("<h1>" + highSchool[i].name + "</h1> <hr> <h2>" + highSchool[i].address + " " + highSchool[i].city + "</h2> <h3>" + "Students:" + highSchool[i].students + "</h3>")
     );
 }
 for (var i = 0; i < airports.length; i++) {
@@ -1253,9 +1496,10 @@ for (var i = 0; i < golf.length; i++) {
 }
 
 var custLayer = L.layerGroup(currentCustomerMarkers);
-var essexHospitalProspectLayer = L.layerGroup(essexHospitalProspects);
-var bergenHospitalProspectLayer = L.layerGroup(bergenHospitalProspects);
-var essexCollegeProspectLayer = L.layerGroup(essexCollegeProspects);
+var hospitalProspectLayer = L.layerGroup(hospitalProspects);
+//var bergenHospitalProspectLayer = L.layerGroup(bergenHospitalProspects);
+var highSchoolProspectLayer = L.layerGroup(highSchoolProspects);
+var collegeProspectLayer = L.layerGroup(collegeProspects);
 var airportProspectLayer = L.layerGroup(airportProspects);
 var businessProspectLayer = L.layerGroup(businessProspects);
 var slaymakerProspectLayer = L.layerGroup(slaymakerNJProspects);
@@ -1289,9 +1533,10 @@ var baseMaps = {
 // Overlays that may be toggled on or off
 var overlayMaps = {
   "Customers": custLayer,
-  "Essex Hospital Prospects": essexHospitalProspectLayer,
-  "Bergen Hospital Prospects": bergenHospitalProspectLayer,
-  "Essex College Prospects": essexCollegeProspectLayer,
+  "Hospital Prospects": hospitalProspectLayer,
+  //"Bergen Hospital Prospects": bergenHospitalProspectLayer,
+  "High School Prospects": highSchoolProspectLayer,
+  "College Prospects": collegeProspectLayer,
   "Prospective Airports": airportProspectLayer,
   "Prospective Businesses": businessProspectLayer,
   "Slaymaker NJ": slaymakerProspectLayer,
