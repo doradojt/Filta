@@ -9,7 +9,8 @@ var currentCustomer= [
 },
 {
   location: [40.78391, -74.3143],
-  name: "FLIK Hospitality Group",
+  name: "FLIK CIT",
+  address: "1 CIT Drive",
   city: "Livingston, NJ 07039"
 },
 {
@@ -1127,9 +1128,9 @@ var golf = [
 ];
 var base = [
   {
-  location: [40.663309, -74.271878],
+  location: [40.663330, -74.272140],
   name: "Operations Base",
-  address: "210 W. Clay Avenue",
+  address: "225 W. Clay Avenue",
   city: "Roselle Park, NJ 07204"  
   },
 ];
@@ -1616,19 +1617,19 @@ for (var i = 0; i < bergenLeads.length; i++) {
 for (var i = 0; i < amusement.length; i++) {
   amusementProspects.push(
     L.marker(amusement[i].location, {icon: amusementIcon})
-      .bindPopup("<h1>" + amusement[i].name + "</h1> <hr> <h2>" + amusement[i].address + "</h2> <h2>" + amusement[i].city + "</h2><h3>" + amusement[i].phone + "</h3>")
+      .bindPopup("<h1>" + amusement[i].name + "</h1> <hr> <h2>" + amusement[i].address + "</h2> <h2>" + amusement[i].city + "</h2>")
     );
 }
 for (var i = 0; i < base.length; i++) {
   baseProspects.push(
     L.marker(base[i].location, {icon: baseIcon})
-      .bindPopup("<h1>" + base[i].name + "</h1> <hr> <h2>" + base[i].address + "</h2> <h2>" + base[i].city + "</h2><h3>" + base[i].phone + "</h3>")
+      .bindPopup("<h1>" + base[i].name + "</h1> <hr> <h2>" + base[i].address + "</h2> <h2>" + base[i].city + "</h2>")
     );
 }
 for (var i = 0; i < golf.length; i++) {
   golfProspects.push(
     L.marker(golf[i].location, {icon: golfIcon})
-      .bindPopup("<h1>" + golf[i].name + "</h1> <hr> <h2>" + golf[i].address + "</h2> <h2>" + golf[i].city + "</h2><h3>" + golf[i].phone + "</h3>")
+      .bindPopup("<h1>" + golf[i].name + "</h1> <hr> <h2>" + golf[i].address + "</h2> <h2>" + golf[i].city + "</h2>")
     );
 }
 
